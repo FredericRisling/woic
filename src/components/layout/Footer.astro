@@ -1,0 +1,89 @@
+---
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+
+const currentYear = new Date().getFullYear();
+
+const footerText = {
+  de: {
+    copyright: `© ${currentYear} Kirche Name. Alle Rechte vorbehalten.`,
+    privacy: 'Datenschutz',
+    imprint: 'Impressum',
+    contact: 'Kontakt'
+  },
+  en: {
+    copyright: `© ${currentYear} Church Name. All rights reserved.`,
+    privacy: 'Privacy',
+    imprint: 'Imprint',
+    contact: 'Contact'
+  }
+};
+
+const text = footerText[lang];
+---
+
+<footer class="bg-gray-50 border-t border-gray-200 mt-auto">
+  <div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Contact Information -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">
+          {text.contact}
+        </h3>
+        <address class="text-gray-600 not-italic text-sm space-y-1">
+          <p>Musterstraße 123</p>
+          <p>12345 Stadt</p>
+          <p class="mt-2">
+            <a href="mailto:info@church.example" class="hover:text-gray-900">
+              info@church.example
+            </a>
+          </p>
+          <p>
+            <a href="tel:+491234567890" class="hover:text-gray-900">
+              +49 123 456 7890
+            </a>
+          </p>
+        </address>
+      </div>
+
+      <!-- Placeholder for future content -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">
+          {lang === 'de' ? 'Über uns' : 'About Us'}
+        </h3>
+        <p class="text-gray-600 text-sm">
+          {lang === 'de'
+            ? 'Eine Gemeinde, die Menschen willkommen heißt und Glauben lebt.'
+            : 'A community that welcomes people and lives faith.'}
+        </p>
+      </div>
+
+      <!-- Legal Links -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">
+          {lang === 'de' ? 'Rechtliches' : 'Legal'}
+        </h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href={`/woic/${lang}/privacy`} class="text-gray-600 hover:text-gray-900">
+              {text.privacy}
+            </a>
+          </li>
+          <li>
+            <a href={`/woic/${lang}/imprint`} class="text-gray-600 hover:text-gray-900">
+              {text.imprint}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-8 pt-8 border-t border-gray-200 text-center">
+      <p class="text-sm text-gray-500">{text.copyright}</p>
+    </div>
+  </div>
+</footer>

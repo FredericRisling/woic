@@ -1,45 +1,49 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+
 // Temporary landing page for deployment testing
+const lang = 'de';
 ---
 
-<!DOCTYPE html>
-<html lang="de">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Coming Soon - Church Website</title>
-    <style>
-      body {
-        font-family: system-ui, -apple-system, sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        margin: 0;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-      }
-      .container {
-        text-align: center;
-        padding: 2rem;
-      }
-      h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-      p {
-        font-size: 1.5rem;
-        opacity: 0.9;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>🏛️ Coming Soon</h1>
-      <p>Church Website in Development</p>
-      <p style="font-size: 1rem; margin-top: 2rem;">
+<BaseLayout
+  title="Willkommen"
+  description="Kirche Website in Entwicklung"
+  lang={lang}
+>
+  <Header slot="default-header" lang={lang} />
+
+  <div class="bg-gradient-to-br from-purple-600 to-purple-900 text-white py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-5xl font-bold mb-6">🏛️ Coming Soon</h1>
+      <p class="text-2xl mb-4 opacity-90">Church Website in Development</p>
+      <p class="text-base opacity-75">
         Astro + TypeScript + Tailwind CSS
       </p>
     </div>
-  </body>
-</html>
+  </div>
+
+  <div class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">
+        Testing Layout System
+      </h2>
+      <div class="prose prose-lg mx-auto text-gray-600">
+        <p>
+          This page demonstrates the new layout system with Header and Footer components.
+          The layout is responsive and uses Tailwind CSS for styling.
+        </p>
+        <ul>
+          <li>✅ BaseLayout with SEO metadata</li>
+          <li>✅ Header with church name</li>
+          <li>✅ Footer with contact info and legal links</li>
+          <li>✅ Responsive design (mobile-first)</li>
+          <li>✅ Tailwind CSS integration</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <Footer slot="default-footer" lang={lang} />
+</BaseLayout>
