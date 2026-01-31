@@ -25,24 +25,24 @@ const footerText = {
 const text = footerText[lang];
 ---
 
-<footer class="bg-gray-50 border-t border-gray-200 mt-auto">
+<footer class="bg-neutral-50 dark:bg-neutral-800 border-t border-neutral-200 dark:border-neutral-700 mt-auto">
   <div class="container mx-auto px-4 py-8">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Contact Information -->
       <div>
-        <h3 class="text-lg font-semibold text-gray-900 mb-3">
+        <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-3">
           {text.contact}
         </h3>
-        <address class="text-gray-600 not-italic text-sm space-y-1">
+        <address class="text-neutral-600 dark:text-neutral-400 not-italic text-sm space-y-1">
           <p>Musterstraße 123</p>
           <p>12345 Stadt</p>
           <p class="mt-2">
-            <a href="mailto:info@church.example" class="hover:text-gray-900">
+            <a href="mailto:info@church.example" class="hover:text-primary-600 dark:hover:text-primary-400">
               info@church.example
             </a>
           </p>
           <p>
-            <a href="tel:+491234567890" class="hover:text-gray-900">
+            <a href="tel:+491234567890" class="hover:text-primary-600 dark:hover:text-primary-400">
               +49 123 456 7890
             </a>
           </p>
@@ -51,10 +51,10 @@ const text = footerText[lang];
 
       <!-- Placeholder for future content -->
       <div>
-        <h3 class="text-lg font-semibold text-gray-900 mb-3">
+        <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-3">
           {lang === 'de' ? 'Über uns' : 'About Us'}
         </h3>
-        <p class="text-gray-600 text-sm">
+        <p class="text-neutral-600 dark:text-neutral-400 text-sm">
           {lang === 'de'
             ? 'Eine Gemeinde, die Menschen willkommen heißt und Glauben lebt.'
             : 'A community that welcomes people and lives faith.'}
@@ -63,17 +63,17 @@ const text = footerText[lang];
 
       <!-- Legal Links -->
       <div>
-        <h3 class="text-lg font-semibold text-gray-900 mb-3">
+        <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-3">
           {lang === 'de' ? 'Rechtliches' : 'Legal'}
         </h3>
         <ul class="space-y-2 text-sm">
           <li>
-            <a href={`/woic/${lang}/privacy`} class="text-gray-600 hover:text-gray-900">
+            <a href={`/woic/${lang}/privacy`} class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400">
               {text.privacy}
             </a>
           </li>
           <li>
-            <a href={`/woic/${lang}/imprint`} class="text-gray-600 hover:text-gray-900">
+            <a href={`/woic/${lang}/imprint`} class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400">
               {text.imprint}
             </a>
           </li>
@@ -82,8 +82,8 @@ const text = footerText[lang];
     </div>
 
     <!-- Copyright -->
-    <div class="mt-8 pt-8 border-t border-gray-200 text-center">
-      <p class="text-sm text-gray-500">{text.copyright}</p>
+    <div class="mt-8 pt-8 border-t border-neutral-200 dark:border-neutral-700 text-center">
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">{text.copyright}</p>
     </div>
   </div>
 </footer>

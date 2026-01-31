@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import Button from '../components/ui/Button.astro';
+import Card from '../components/ui/Card.astro';
 
 // Temporary landing page for deployment testing
 const lang = 'de';
@@ -14,33 +16,83 @@ const lang = 'de';
 >
   <Header slot="default-header" lang={lang} />
 
-  <div class="bg-gradient-to-br from-purple-600 to-purple-900 text-white py-20">
+  <!-- Hero Section with Primary Color -->
+  <div class="bg-gradient-to-br from-primary-500 to-primary-700 text-white py-20">
     <div class="container mx-auto px-4 text-center">
       <h1 class="text-5xl font-bold mb-6">🏛️ Coming Soon</h1>
       <p class="text-2xl mb-4 opacity-90">Church Website in Development</p>
-      <p class="text-base opacity-75">
-        Astro + TypeScript + Tailwind CSS
+      <p class="text-base opacity-75 mb-8">
+        Astro + TypeScript + Tailwind CSS + Dark Mode
       </p>
+      <div class="flex gap-4 justify-center">
+        <Button variant="secondary" class="text-lg px-6 py-3">
+          Learn More
+        </Button>
+        <Button variant="primary" class="text-lg px-6 py-3 bg-white text-primary-600 hover:bg-neutral-100">
+          Contact Us
+        </Button>
+      </div>
     </div>
   </div>
 
+  <!-- Features Section -->
   <div class="container mx-auto px-4 py-16">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">
-        Testing Layout System
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-12 text-center">
+        Design System Features
       </h2>
-      <div class="prose prose-lg mx-auto text-gray-600">
-        <p>
-          This page demonstrates the new layout system with Header and Footer components.
-          The layout is responsive and uses Tailwind CSS for styling.
-        </p>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <Card>
+          <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">
+            🌓 Dark Mode
+          </h3>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Automatic dark mode support based on your device preferences. Try switching your system theme!
+          </p>
+        </Card>
+
+        <Card>
+          <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">
+            🎨 Brand Colors
+          </h3>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Custom color palette with primary color #418FD2 from your church logo. Works in light and dark modes.
+          </p>
+        </Card>
+
+        <Card>
+          <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">
+            📱 Responsive
+          </h3>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Mobile-first design that adapts beautifully to all screen sizes from phones to large monitors.
+          </p>
+        </Card>
+      </div>
+
+      <div class="prose dark:prose-dark max-w-3xl mx-auto">
+        <h3>Implementation Progress</h3>
         <ul>
-          <li>✅ BaseLayout with SEO metadata</li>
-          <li>✅ Header with church name</li>
+          <li>✅ BaseLayout with SEO metadata (OG tags, canonical URLs)</li>
+          <li>✅ Header with church name and responsive navigation</li>
           <li>✅ Footer with contact info and legal links</li>
-          <li>✅ Responsive design (mobile-first)</li>
-          <li>✅ Tailwind CSS integration</li>
+          <li>✅ Dark mode support (respects OS preference)</li>
+          <li>✅ Tailwind CSS with custom brand colors</li>
+          <li>✅ Reusable Button and Card components</li>
+          <li>✅ System font stack for performance</li>
+          <li>✅ Responsive design (mobile, tablet, desktop)</li>
         </ul>
+
+        <div class="mt-8 p-6 bg-primary-50 dark:bg-primary-900/20 rounded-lg border border-primary-200 dark:border-primary-800">
+          <p class="text-primary-900 dark:text-primary-100 font-semibold mb-2">
+            Layer 1 Complete! 🎉
+          </p>
+          <p class="text-primary-800 dark:text-primary-200 text-sm">
+            Foundation, deployment pipeline, layouts, and styling system are all in place.
+            Next up: Language routing and content management.
+          </p>
+        </div>
       </div>
     </div>
   </div>

@@ -1,1 +1,108 @@
 @import "tailwindcss";
+
+/* Base styles for light and dark mode */
+@layer base {
+  :root {
+    /* Light mode colors */
+    --color-bg-primary: theme('colors.white');
+    --color-bg-secondary: theme('colors.neutral.50');
+    --color-text-primary: theme('colors.neutral.900');
+    --color-text-secondary: theme('colors.neutral.600');
+    --color-border: theme('colors.neutral.200');
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      /* Dark mode colors */
+      --color-bg-primary: theme('colors.neutral.900');
+      --color-bg-secondary: theme('colors.neutral.800');
+      --color-text-primary: theme('colors.neutral.100');
+      --color-text-secondary: theme('colors.neutral.400');
+      --color-border: theme('colors.neutral.700');
+    }
+  }
+
+  body {
+    @apply bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100;
+    @apply antialiased;
+  }
+
+  /* Smooth transitions for dark mode */
+  * {
+    @apply transition-colors duration-200;
+  }
+
+  /* Typography defaults */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl;
+  }
+
+  h6 {
+    @apply text-base md:text-lg;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+  }
+
+  /* Links */
+  a {
+    @apply text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300;
+    @apply transition-colors duration-150;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-500;
+  }
+}
+
+/* Component layer for reusable patterns */
+@layer components {
+  .container {
+    @apply mx-auto px-4 max-w-7xl;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600;
+    @apply focus:ring-primary-500;
+    @apply dark:bg-primary-600 dark:hover:bg-primary-700;
+  }
+
+  .btn-secondary {
+    @apply bg-neutral-200 text-neutral-900 hover:bg-neutral-300;
+    @apply focus:ring-neutral-500;
+    @apply dark:bg-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-600;
+  }
+
+  .card {
+    @apply bg-white dark:bg-neutral-800 rounded-lg shadow-md;
+    @apply border border-neutral-200 dark:border-neutral-700;
+    @apply p-6;
+  }
+}
