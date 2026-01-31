@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Hero from '../../components/ui/Hero.astro';
+import Section from '../../components/ui/Section.astro';
+import Card from '../../components/ui/Card.astro';
+
+const lang = 'de';
+---
+
+<BaseLayout
+  title="Veranstaltungen"
+  description="Entdecken Sie unsere kommenden Veranstaltungen und Programme"
+  lang={lang}
+>
+  <Header slot="default-header" lang={lang} />
+
+  <Hero
+    title="Veranstaltungen"
+    subtitle="Entdecken Sie unsere Programme und Gemeinschaftsaktivitäten"
+  />
+
+  <Section title="Kommende Veranstaltungen">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <Card>
+        <div class="mb-4">
+          <span class="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-medium rounded-full">
+            Wöchentlich
+          </span>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">
+          Bibelstudiengruppe
+        </h3>
+        <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
+          Donnerstags, 19:00 Uhr
+        </p>
+        <p class="text-neutral-600 dark:text-neutral-400">
+          Gemeinsames Studium der Bibel in entspannter Atmosphäre mit Diskussion und Austausch.
+        </p>
+      </Card>
+
+      <Card>
+        <div class="mb-4">
+          <span class="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-medium rounded-full">
+            Wöchentlich
+          </span>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">
+          Jugendgruppe
+        </h3>
+        <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
+          Freitags, 18:00 Uhr
+        </p>
+        <p class="text-neutral-600 dark:text-neutral-400">
+          Spiele, Diskussionen und Gemeinschaft für Jugendliche ab 12 Jahren.
+        </p>
+      </Card>
+
+      <Card>
+        <div class="mb-4">
+          <span class="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-medium rounded-full">
+            Monatlich
+          </span>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">
+          Gemeindefrühstück
+        </h3>
+        <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
+          Erster Sonntag im Monat
+        </p>
+        <p class="text-neutral-600 dark:text-neutral-400">
+          Gemeinsames Frühstück nach dem Gottesdienst - eine tolle Gelegenheit, sich kennenzulernen.
+        </p>
+      </Card>
+
+      <Card>
+        <div class="mb-4">
+          <span class="inline-block px-3 py-1 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 text-sm font-medium rounded-full">
+            Besonderes
+          </span>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">
+          Familientag
+        </h3>
+        <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
+          Details folgen
+        </p>
+        <p class="text-neutral-600 dark:text-neutral-400">
+          Ein besonderer Tag für die ganze Familie mit Aktivitäten, Spielen und gemeinsamem Essen.
+        </p>
+      </Card>
+
+      <Card>
+        <div class="mb-4">
+          <span class="inline-block px-3 py-1 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 text-sm font-medium rounded-full">
+            Besonderes
+          </span>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">
+          Sommercamp
+        </h3>
+        <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
+          Details folgen
+        </p>
+        <p class="text-neutral-600 dark:text-neutral-400">
+          Eine Woche voller Abenteuer, Gemeinschaft und Glauben für Kinder und Jugendliche.
+        </p>
+      </Card>
+
+      <Card>
+        <div class="mb-4">
+          <span class="inline-block px-3 py-1 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 text-sm font-medium rounded-full">
+            Besonderes
+          </span>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">
+          Weihnachtskonzert
+        </h3>
+        <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
+          Details folgen
+        </p>
+        <p class="text-neutral-600 dark:text-neutral-400">
+          Festliche Musik und Gesang zur Weihnachtszeit mit unserem Gemeindechor.
+        </p>
+      </Card>
+    </div>
+  </Section>
+
+  <Section background="gray">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
+        Bleiben Sie informiert
+      </h2>
+      <p class="text-lg text-neutral-600 dark:text-neutral-400">
+        Möchten Sie über unsere Veranstaltungen auf dem Laufenden bleiben?
+        Kontaktieren Sie uns, um in unseren Verteiler aufgenommen zu werden.
+      </p>
+    </div>
+  </Section>
+
+  <Footer slot="default-footer" lang={lang} />
+</BaseLayout>

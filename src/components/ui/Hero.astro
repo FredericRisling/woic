@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  image?: string;
+  overlay?: boolean;
+  class?: string;
+}
+
+const { title, subtitle, image, overlay = true, class: className = '' } = Astro.props;
+---
+
+<div
+  class={`relative bg-gradient-to-br from-primary-500 to-primary-700 text-white py-20 md:py-32 ${className}`.trim()}
+  style={image ? `background-image: url(${image}); background-size: cover; background-position: center;` : ''}
+>
+  {overlay && image && (
+    <div class="absolute inset-0 bg-primary-900/60" />
+  )}
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">{title}</h1>
+      {subtitle && (
+        <p class="text-xl md:text-2xl opacity-90 mb-8">{subtitle}</p>
+      )}
+      <slot />
+    </div>
+  </div>
+</div>

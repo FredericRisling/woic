@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Hero from '../../components/ui/Hero.astro';
+import Section from '../../components/ui/Section.astro';
+import Card from '../../components/ui/Card.astro';
+import Container from '../../components/ui/Container.astro';
+
+const lang = 'en';
+---
+
+<BaseLayout
+  title="Services"
+  description="Information about our services and times"
+  lang={lang}
+>
+  <Header slot="default-header" lang={lang} />
+
+  <Hero
+    title="Services"
+    subtitle="Worship with us - Every Sunday and on special occasions"
+  />
+
+  <Section title="Service Times">
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <Card>
+        <h3 class="text-2xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
+          Sunday Service
+        </h3>
+        <p class="text-lg font-semibold text-primary-600 dark:text-primary-400 mb-3">
+          Every Sunday at 10:00 AM
+        </p>
+        <p class="text-neutral-600 dark:text-neutral-400">
+          Our main service with sermon, music, and community.
+          Children and families are warmly welcome.
+        </p>
+      </Card>
+
+      <Card>
+        <h3 class="text-2xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
+          Evening Service
+        </h3>
+        <p class="text-lg font-semibold text-primary-600 dark:text-primary-400 mb-3">
+          Every Wednesday at 7:00 PM
+        </p>
+        <p class="text-neutral-600 dark:text-neutral-400">
+          A quieter, contemplative mid-week service
+          with prayer and a short devotional.
+        </p>
+      </Card>
+    </div>
+  </Section>
+
+  <Section background="gray" title="What to Expect">
+    <Container size="md">
+      <div class="prose dark:prose-invert max-w-none">
+        <p class="text-lg text-neutral-600 dark:text-neutral-400">
+          Our services blend traditional and contemporary elements.
+          You can expect uplifting music, relevant sermons, and a welcoming atmosphere.
+        </p>
+        <ul class="text-neutral-600 dark:text-neutral-400">
+          <li>Contemporary worship music</li>
+          <li>Biblically grounded sermons</li>
+          <li>Children's program for the little ones</li>
+          <li>Fellowship over coffee after service</li>
+          <li>Accessible facilities</li>
+        </ul>
+      </div>
+    </Container>
+  </Section>
+
+  <Section title="Online Services">
+    <Container size="md">
+      <div class="text-center">
+        <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
+          Can't join us in person? No problem! Our services are livestreamed.
+        </p>
+        <a
+          href="/woic/en/media"
+          class="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors"
+        >
+          Watch Livestream
+        </a>
+      </div>
+    </Container>
+  </Section>
+
+  <Footer slot="default-footer" lang={lang} />
+</BaseLayout>

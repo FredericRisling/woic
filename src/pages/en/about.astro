@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Hero from '../../components/ui/Hero.astro';
+import Section from '../../components/ui/Section.astro';
+import Container from '../../components/ui/Container.astro';
+
+const lang = 'en';
+---
+
+<BaseLayout
+  title="About Us"
+  description="Learn more about our community, our history, and our values"
+  lang={lang}
+>
+  <Header slot="default-header" lang={lang} />
+
+  <Hero
+    title="About Us"
+    subtitle="Our history, mission, and values"
+  />
+
+  <Section>
+    <Container size="md">
+      <div class="prose dark:prose-invert max-w-none">
+        <h2>Our Mission</h2>
+        <p class="text-lg text-neutral-600 dark:text-neutral-400">
+          We are a vibrant community of people who live and share faith together.
+          Our goal is to welcome people from all backgrounds and provide them with a place
+          where they can encounter God, experience community, and grow in faith.
+        </p>
+
+        <h2>Our History</h2>
+        <p class="text-neutral-600 dark:text-neutral-400">
+          For many years, we have been an integral part of our community. What began as a small group
+          has become a diverse and growing community that connects people from all walks of life.
+        </p>
+
+        <h2>Our Values</h2>
+        <ul class="text-neutral-600 dark:text-neutral-400">
+          <li><strong>Hospitality:</strong> Everyone is welcome, regardless of background or origin</li>
+          <li><strong>Community:</strong> We believe in the power of genuine relationships</li>
+          <li><strong>Faith:</strong> We seek God together through prayer, worship, and study</li>
+          <li><strong>Service:</strong> We are committed to our neighbors and our community</li>
+        </ul>
+
+        <h2>Leadership</h2>
+        <p class="text-neutral-600 dark:text-neutral-400">
+          Our community is led by a dedicated team committed to the care and growth
+          of our congregation.
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <Footer slot="default-footer" lang={lang} />
+</BaseLayout>

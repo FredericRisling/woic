@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Hero from '../../components/ui/Hero.astro';
+import Section from '../../components/ui/Section.astro';
+import Container from '../../components/ui/Container.astro';
+
+const lang = 'en';
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="Information about data protection"
+  lang={lang}
+>
+  <Header slot="default-header" lang={lang} />
+
+  <Hero
+    title="Privacy Policy"
+    subtitle="Information about the processing of your data"
+  />
+
+  <Section>
+    <Container size="md">
+      <div class="prose dark:prose-invert max-w-none">
+        <h2>1. Data Protection at a Glance</h2>
+
+        <h3>General Information</h3>
+        <p>
+          The following information provides a simple overview of what happens to your personal
+          data when you visit this website. Personal data is any data that can personally
+          identify you.
+        </p>
+
+        <h3>Data Collection on this Website</h3>
+        <h4>Who is responsible for data collection on this website?</h4>
+        <p>
+          Data processing on this website is carried out by the website operator.
+          You can find their contact details in the imprint of this website.
+        </p>
+
+        <h4>How do we collect your data?</h4>
+        <p>
+          Your data is collected when you provide it to us.
+          This may be data that you enter in a contact form, for example.
+        </p>
+        <p>
+          Other data is collected automatically or with your consent when you visit the website
+          through our IT systems. This is primarily technical data (e.g., internet browser,
+          operating system, or time of page access).
+        </p>
+
+        <h4>What do we use your data for?</h4>
+        <p>
+          Some of the data is collected to ensure error-free provision of the website.
+          Other data may be used to analyze your user behavior.
+        </p>
+
+        <h2>2. Hosting</h2>
+
+        <h3>GitHub Pages</h3>
+        <p>
+          This website is hosted on GitHub Pages. Operator is GitHub Inc., 88 Colin P. Kelly Jr. St.,
+          San Francisco, CA 94107, USA. For more information on how user data is handled, see
+          GitHub's privacy policy:
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">
+            https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement
+          </a>
+        </p>
+
+        <h2>3. General Information and Mandatory Information</h2>
+
+        <h3>Data Protection</h3>
+        <p>
+          The operators of these pages take the protection of your personal data very seriously.
+          We treat your personal data confidentially and in accordance with legal data protection
+          regulations and this privacy policy.
+        </p>
+
+        <h3>Note on the Responsible Party</h3>
+        <p>
+          The responsible party for data processing on this website is specified in the imprint
+          of this website.
+        </p>
+
+        <h3>Storage Duration</h3>
+        <p>
+          Unless a more specific storage period is mentioned within this privacy policy,
+          your personal data will remain with us until the purpose for data processing ceases to apply.
+        </p>
+
+        <h3>Your Rights</h3>
+        <p>
+          You have the right to free information about your stored personal data, its origin and
+          recipients, and the purpose of data processing at any time, and possibly a right to
+          correction or deletion of this data.
+        </p>
+
+        <h2>4. Data Collection on this Website</h2>
+
+        <h3>Server Log Files</h3>
+        <p>
+          The provider of the pages automatically collects and stores information in so-called
+          server log files, which your browser automatically transmits to us. These are:
+        </p>
+        <ul>
+          <li>Browser type and version</li>
+          <li>Operating system used</li>
+          <li>Referrer URL</li>
+          <li>Hostname of the accessing computer</li>
+          <li>Time of the server request</li>
+          <li>IP address</li>
+        </ul>
+        <p>
+          This data is not merged with other data sources. The collection of this
+          data is based on Art. 6 para. 1 lit. f GDPR.
+        </p>
+
+        <h2>5. Contact</h2>
+        <p>
+          If you contact us by email or telephone, your inquiry including all resulting
+          personal data (name, inquiry) will be stored and processed by us for the purpose
+          of processing your request. We do not share this data without your consent.
+        </p>
+
+        <h2>6. Changes to this Privacy Policy</h2>
+        <p>
+          We reserve the right to occasionally adjust this privacy policy so that it always
+          complies with current legal requirements or to implement changes to our services.
+          Your next visit will then be subject to the new privacy policy.
+        </p>
+
+        <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-8">
+          Last updated: January 2026
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <Footer slot="default-footer" lang={lang} />
+</BaseLayout>

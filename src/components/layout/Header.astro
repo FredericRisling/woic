@@ -9,6 +9,32 @@ const churchName = {
   de: 'Kirche Name',
   en: 'Church Name'
 };
+
+const navItems = {
+  de: [
+    { href: '/woic/de', label: 'Startseite' },
+    { href: '/woic/de/about', label: 'Über uns' },
+    { href: '/woic/de/services', label: 'Gottesdienste' },
+    { href: '/woic/de/events', label: 'Veranstaltungen' },
+    { href: '/woic/de/media', label: 'Medien' },
+    { href: '/woic/de/contact', label: 'Kontakt' },
+    { href: '/woic/de/donations', label: 'Spenden' },
+  ],
+  en: [
+    { href: '/woic/en', label: 'Home' },
+    { href: '/woic/en/about', label: 'About' },
+    { href: '/woic/en/services', label: 'Services' },
+    { href: '/woic/en/events', label: 'Events' },
+    { href: '/woic/en/media', label: 'Media' },
+    { href: '/woic/en/contact', label: 'Contact' },
+    { href: '/woic/en/donations', label: 'Donations' },
+  ]
+};
+
+const currentPath = Astro.url.pathname;
+const otherLang = lang === 'de' ? 'en' : 'de';
+const currentPathWithoutLang = Astro.url.pathname.replace(/^\/woic\/(de|en)/, '');
+const switchUrl = `/woic/${otherLang}${currentPathWithoutLang || '/'}`;
 ---
 
 <header class="bg-white dark:bg-neutral-900 shadow-sm border-b border-neutral-200 dark:border-neutral-700">
@@ -16,23 +42,87 @@ const churchName = {
     <div class="flex items-center justify-between">
       <!-- Church Name/Logo -->
       <div class="flex items-center space-x-3">
-        <div class="text-2xl text-primary-500 dark:text-primary-400">🏛️</div>
+        <img
+          src="/woic/assets/images/ChurchLogo.png"
+          alt="Church Logo"
+          class="h-10 w-auto"
+          width="40"
+          height="40"
+        />
         <h1 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">
           {churchName[lang]}
         </h1>
       </div>
 
-      <!-- Navigation Placeholder -->
-      <nav class="hidden md:block">
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          Navigation coming soon
-        </div>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-6">
+        {navItems[lang].map((item) => (
+          <a
+            href={item.href}
+            class={`text-sm font-medium transition-colors ${
+              currentPath === item.href || currentPath.startsWith(item.href + '/')
+                ? 'text-primary-600 dark:text-primary-400'
+                : 'text-neutral-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400'
+            }`}
+          >
+            {item.label}
+          </a>
+        ))}
       </nav>
 
-      <!-- Language Switcher Placeholder -->
-      <div class="flex items-center space-x-2">
-        <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300 uppercase">{lang}</span>
+      <!-- Mobile Menu Button -->
+      <button
+        type="button"
+        class="md:hidden p-2 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors"
+        aria-label="Toggle menu"
+        id="mobile-menu-button"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Language Switcher -->
+      <div class="hidden md:flex items-center">
+        <a
+          href={switchUrl}
+          class="flex items-center space-x-1 px-3 py-1.5 rounded-lg text-sm font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
+          aria-label={lang === 'de' ? 'Switch to English' : 'Auf Deutsch wechseln'}
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+          </svg>
+          <span class="uppercase">{otherLang}</span>
+        </a>
       </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-neutral-200 dark:border-neutral-700">
+      <nav class="px-4 py-4 space-y-2">
+        {navItems[lang].map((item) => (
+          <a
+            href={item.href}
+            class={`block py-2 px-3 rounded-lg text-sm font-medium transition-colors ${
+              currentPath === item.href || currentPath.startsWith(item.href + '/')
+                ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400'
+                : 'text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800'
+            }`}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
     </div>
   </div>
 </header>
+
+<script>
+  // Mobile menu toggle
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+
+  button?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Hero from '../../components/ui/Hero.astro';
+import Section from '../../components/ui/Section.astro';
+import Card from '../../components/ui/Card.astro';
+import Button from '../../components/ui/Button.astro';
+
+const lang = 'de';
+---
+
+<BaseLayout
+  title="Willkommen"
+  description="Herzlich willkommen in unserer Gemeinde"
+  lang={lang}
+>
+  <Header slot="default-header" lang={lang} />
+
+  <Hero
+    title="Willkommen in unserer Gemeinde"
+    subtitle="Eine Gemeinschaft, die Menschen willkommen heißt und Glauben lebt"
+  >
+    <div class="flex gap-4 justify-center">
+      <Button href="/woic/de/about" variant="primary" class="bg-white text-primary-600 hover:bg-neutral-100">
+        Mehr erfahren
+      </Button>
+      <Button href="/woic/de/contact" variant="secondary">
+        Kontakt aufnehmen
+      </Button>
+    </div>
+  </Hero>
+
+  <Section
+    title="Unsere Gemeinde"
+    subtitle="Wir sind eine lebendige Gemeinschaft von Menschen, die gemeinsam Glauben leben und teilen"
+  >
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <Card>
+        <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">
+          Gottesdienste
+        </h3>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-4">
+          Jeden Sonntag feiern wir gemeinsam Gottesdienst. Kommen Sie vorbei und erleben Sie eine herzliche Gemeinschaft.
+        </p>
+        <Button href="/woic/de/services" variant="primary" class="w-full">
+          Zeiten ansehen
+        </Button>
+      </Card>
+
+      <Card>
+        <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">
+          Veranstaltungen
+        </h3>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-4">
+          Entdecken Sie unsere vielfältigen Veranstaltungen und Programme für alle Altersgruppen.
+        </p>
+        <Button href="/woic/de/events" variant="primary" class="w-full">
+          Programm entdecken
+        </Button>
+      </Card>
+
+      <Card>
+        <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">
+          Gemeinschaft
+        </h3>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-4">
+          Lernen Sie uns kennen und werden Sie Teil unserer wachsenden Gemeinschaft.
+        </p>
+        <Button href="/woic/de/about" variant="primary" class="w-full">
+          Über uns
+        </Button>
+      </Card>
+    </div>
+  </Section>
+
+  <Section background="gray" title="Aktuelles">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
+        Bleiben Sie auf dem Laufenden über unsere neuesten Nachrichten und Veranstaltungen.
+      </p>
+      <Button href="/woic/de/events" variant="primary">
+        Alle Veranstaltungen
+      </Button>
+    </div>
+  </Section>
+
+  <Footer slot="default-footer" lang={lang} />
+</BaseLayout>

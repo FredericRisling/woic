@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Hero from '../../components/ui/Hero.astro';
+import Section from '../../components/ui/Section.astro';
+import Container from '../../components/ui/Container.astro';
+
+const lang = 'de';
+---
+
+<BaseLayout
+  title="Medien"
+  description="Videos, Predigten und weitere Medieninhalte unserer Gemeinde"
+  lang={lang}
+>
+  <Header slot="default-header" lang={lang} />
+
+  <Hero
+    title="Medien"
+    subtitle="Livestreams, Predigten und weitere Inhalte"
+  />
+
+  <Section title="Livestream">
+    <Container size="md">
+      <div class="text-center mb-8">
+        <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
+          Unsere Gottesdienste werden live übertragen. Schauen Sie sich vergangene Übertragungen an
+          oder schließen Sie sich uns live an.
+        </p>
+        <div class="aspect-video bg-neutral-200 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+          <p class="text-neutral-500 dark:text-neutral-400">
+            Livestream-Player wird hier integriert
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Section background="gray" title="Predigten">
+    <Container size="lg">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white dark:bg-neutral-900 rounded-lg overflow-hidden shadow-sm">
+          <div class="aspect-video bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center">
+            <span class="text-neutral-500 dark:text-neutral-400">Video-Vorschau</span>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+              Aktuelle Predigt
+            </h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              Titel und Beschreibung der neuesten Predigt
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-neutral-900 rounded-lg overflow-hidden shadow-sm">
+          <div class="aspect-video bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center">
+            <span class="text-neutral-500 dark:text-neutral-400">Video-Vorschau</span>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+              Weitere Predigten
+            </h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              Archiv vergangener Predigten und Lehren
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-neutral-900 rounded-lg overflow-hidden shadow-sm">
+          <div class="aspect-video bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center">
+            <span class="text-neutral-500 dark:text-neutral-400">Video-Vorschau</span>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+              Besondere Veranstaltungen
+            </h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              Aufzeichnungen besonderer Gottesdienste und Events
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Section title="Ressourcen">
+    <Container size="md">
+      <div class="prose dark:prose-invert max-w-none">
+        <p class="text-lg text-neutral-600 dark:text-neutral-400">
+          Zusätzlich zu unseren Video-Inhalten bieten wir verschiedene Ressourcen an:
+        </p>
+        <ul class="text-neutral-600 dark:text-neutral-400">
+          <li>Predigtnotizen und Begleitm aterialien</li>
+          <li>Gemeindenachrichten und Newsletter</li>
+          <li>Gebetsanliegen und Updates</li>
+          <li>Fotogalerien von Veranstaltungen</li>
+        </ul>
+      </div>
+    </Container>
+  </Section>
+
+  <Footer slot="default-footer" lang={lang} />
+</BaseLayout>

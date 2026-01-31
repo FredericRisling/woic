@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 interface Props {
   title: string;
   description: string;
@@ -14,6 +16,29 @@ const { title, description, lang, seo } = Astro.props;
 const pageTitle = seo?.title || title;
 const pageDescription = seo?.description || description;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Language alternates
+const currentPathWithoutLang = Astro.url.pathname.replace(/^\/woic\/(de|en)/, '') || '/';
+const deUrl = new URL(`/woic/de${currentPathWithoutLang}`, Astro.site);
+const enUrl = new URL(`/woic/en${currentPathWithoutLang}`, Astro.site);
+
+// Structured data for Church
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Church",
+  "name": lang === 'de' ? 'Kirche Name' : 'Church Name',
+  "url": Astro.site,
+  "logo": new URL('/woic/assets/images/ChurchLogo.png', Astro.site).href,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": lang === 'de' ? 'Musterstraße 123' : '123 Sample Street',
+    "addressLocality": lang === 'de' ? 'Musterstadt' : 'Sample City',
+    "postalCode": "12345",
+    "addressCountry": "DE"
+  },
+  "telephone": "+49 (0) 123 456 7890",
+  "email": "info@example.com"
+};
 ---
 
 <!DOCTYPE html>
@@ -30,6 +55,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
+
+    <!-- Language Alternates -->
+    <link rel="alternate" hreflang="de" href={deUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={deUrl} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -49,8 +79,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="icon" type="image/svg+xml" href="/woic/favicon.svg" />
     <link rel="icon" href="/woic/favicon.ico" />
 
-    <!-- Global Styles -->
-    <link rel="stylesheet" href="/woic/src/styles/global.css" />
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body class="min-h-screen flex flex-col">
     <slot name="header">
