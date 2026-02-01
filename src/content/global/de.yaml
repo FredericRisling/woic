@@ -1,0 +1,50 @@
+site:
+  name: "WOIC Berlin"
+  description: "Word of Faith Outreach International Center - Eine Kirche offen für Menschen aller Nationen"
+  email: "info@woic-bln.org"
+  phone: "+49 30 5858 3119"
+
+organization:
+  name: "Word of Faith Outreach International Center e.V."
+  url: "https://fredericrisling.github.io/woic"
+  logo: "/woic/assets/images/ChurchLogo.png"
+  address:
+    street: "Amendestraße 15"
+    city: "Berlin"
+    postalCode: "13409"
+    country: "DE"
+  telephone: "+49 30 5858 3119"
+  email: "info@woic-bln.org"
+
+navigation:
+  - href: "/woic/de"
+    label: "Startseite"
+  - href: "/woic/de/about"
+    label: "Über uns"
+  - href: "/woic/de/services"
+    label: "Gottesdienste"
+  - href: "/woic/de/events"
+    label: "Veranstaltungen"
+  - href: "/woic/de/media"
+    label: "Medien"
+  - href: "/woic/de/contact"
+    label: "Kontakt"
+  - href: "/woic/de/donations"
+    label: "Spenden"
+
+footer:
+  about: "Word of Faith Outreach International Center (W.O.I.C. e.V.) lehrt den Glauben Gottes und heißt Menschen aller Nationen willkommen."
+  contact:
+    address:
+      - "Amendestraße 15"
+      - "13409 Berlin"
+    email: "info@woic-bln.org"
+    phone: "+49 30 5858 3119"
+  legal:
+    privacy: "Datenschutz"
+    imprint: "Impressum"
+    contact: "Kontakt"
+  copyright: "© {year} Word of Faith Outreach International Center e.V. Alle Rechte vorbehalten."
+
+social:
+  youtube: "https://www.youtube.com/@w.o.i.cberlin171"

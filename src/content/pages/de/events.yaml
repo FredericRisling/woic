@@ -1,0 +1,35 @@
+meta:
+  title: "Veranstaltungen"
+  description: "Regelmäßige Gottesdienste und Programme bei WOIC Berlin"
+
+hero:
+  title: "Veranstaltungen"
+  subtitle: "Unsere regelmäßigen Gottesdienste und Gemeindeprogramme"
+
+sections:
+  - type: "events"
+    title: "Regelmäßige Programme"
+    events:
+      - badge: "Wöchentlich"
+        badgeColor: "primary"
+        title: "Sonntagsgottesdienst"
+        time: "Jeden Sonntag, 11:00 - 13:30 Uhr"
+        description: "Unser wöchentlicher Hauptgottesdienst mit Anbetung, Lehre und Gemeinschaft. Sowohl vor Ort als auch über Zoom. Offen für Menschen aller Nationen."
+      - badge: "Wöchentlich"
+        badgeColor: "primary"
+        title: "Kinder- & Jugendgruppen"
+        time: "Jeden Sonntag, 12:00 - 12:45 Uhr"
+        description: "Programme für Kinder und Jugendliche bis 16 Jahre. Ein Ort, um im Glauben und in Freundschaften zu wachsen."
+      - badge: "Täglich"
+        badgeColor: "primary"
+        title: "Gebetstelefon"
+        time: "Montag - Samstag: 5:00, 12:00 & 20:00 Uhr"
+        description: "30 Minuten gemeinsames Gebet über das Gebetstelefon. Wählen Sie 030 5201 4350 (Passwort: 799671#)."
+
+  - type: "text"
+    title: "Bleiben Sie informiert"
+    background: "gray"
+    content: "Möchten Sie über unsere Veranstaltungen und Sonderprogramme auf dem Laufenden bleiben? Kontaktieren Sie uns, um in unseren Verteiler aufgenommen zu werden, oder folgen Sie uns in den sozialen Medien."
+    button:
+      text: "Kontakt aufnehmen"
+      href: "/woic/de/contact"

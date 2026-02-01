@@ -1,0 +1,35 @@
+meta:
+  title: "Events"
+  description: "Regular services and programs at WOIC Berlin"
+
+hero:
+  title: "Events"
+  subtitle: "Our regular services and community programs"
+
+sections:
+  - type: "events"
+    title: "Regular Programs"
+    events:
+      - badge: "Weekly"
+        badgeColor: "primary"
+        title: "Sunday Service"
+        time: "Every Sunday, 11:00 - 13:30"
+        description: "Our main weekly service with worship, teaching, and fellowship. Both in-person and via Zoom. Open to people of all nations."
+      - badge: "Weekly"
+        badgeColor: "primary"
+        title: "Children & Youth Groups"
+        time: "Every Sunday, 12:00 - 12:45"
+        description: "Programs for children and young people up to 16 years old. A place to grow in faith and friendships."
+      - badge: "Daily"
+        badgeColor: "primary"
+        title: "Telephone Prayer Line"
+        time: "Monday - Saturday: 5:00 AM, 12:00 PM & 8:00 PM"
+        description: "30 minutes of prayer together over the telephone prayer line. Dial 030 5201 4350 (Password: 799671#)."
+
+  - type: "text"
+    title: "Stay Informed"
+    background: "gray"
+    content: "Would you like to stay updated about our events and special programs? Contact us to be added to our mailing list or follow us on our social media channels."
+    button:
+      text: "Contact Us"
+      href: "/woic/en/contact"

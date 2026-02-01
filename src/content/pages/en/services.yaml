@@ -1,0 +1,58 @@
+meta:
+  title: "Services"
+  description: "Service times and ways to worship with WOIC Berlin"
+
+hero:
+  title: "Services"
+  subtitle: "Worship with us - Every Sunday and throughout the week"
+
+sections:
+  - type: "cards"
+    title: "Service Times"
+    cards:
+      - title: "Sunday Service"
+        time: "Every Sunday, 11:00 - 13:30"
+        description: "Our main service with worship, teaching, and fellowship. Both in-person at our church and on Zoom. Our church is open to people of all nations."
+        badge: "In-Person & Zoom"
+      - title: "Children & Youth Groups"
+        time: "Every Sunday, 12:00 - 12:45"
+        description: "Programs for children and young people up to 16 years old. Growing together in faith, friendship, and fun."
+
+  - type: "html"
+    title: "Join via Zoom"
+    background: "gray"
+    html: |
+      <p class="text-lg text-neutral-600 dark:text-neutral-400">
+        Can't join us in person? Participate in our Sunday service via Zoom:
+      </p>
+      <ul class="text-neutral-600 dark:text-neutral-400">
+        <li><strong>Zoom Meeting ID:</strong> 923 8639 6816</li>
+        <li><strong>Passcode:</strong> 775470#</li>
+      </ul>
+      <p class="text-neutral-600 dark:text-neutral-400 mt-4">
+        Simply join using the meeting ID and passcode above to worship with us from anywhere in the world.
+      </p>
+
+  - type: "html"
+    title: "Telephone Prayer Line"
+    html: |
+      <p class="text-lg text-neutral-600 dark:text-neutral-400">
+        Join our telephone prayer line Monday to Saturday. We pray together three times daily:
+      </p>
+      <ul class="text-neutral-600 dark:text-neutral-400">
+        <li><strong>Morning:</strong> 5:00 AM - 5:30 AM</li>
+        <li><strong>Midday:</strong> 12:00 PM - 12:30 PM</li>
+        <li><strong>Evening:</strong> 8:00 PM - 8:30 PM</li>
+      </ul>
+      <p class="text-neutral-600 dark:text-neutral-400 mt-4">
+        <strong>Dial:</strong> 030 5201 4350<br>
+        <strong>Password:</strong> 799671#
+      </p>
+
+  - type: "text"
+    title: "Online Services"
+    background: "gray"
+    content: "Watch our sermons and past services on our media page."
+    button:
+      text: "Watch Sermons"
+      href: "/woic/en/media"

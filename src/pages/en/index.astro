@@ -1,4 +1,5 @@
 ---
+import { getEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
@@ -8,82 +9,83 @@ import Card from '../../components/ui/Card.astro';
 import Button from '../../components/ui/Button.astro';
 
 const lang = 'en';
+const pageData = await getEntry('pages', `${lang}/index`);
 ---
 
 <BaseLayout
-  title="Welcome"
-  description="Welcome to our community"
+  title={pageData.data.meta.title}
+  description={pageData.data.meta.description}
   lang={lang}
 >
   <Header slot="default-header" lang={lang} />
 
-  <Hero
-    title="Welcome to our Community"
-    subtitle="A community that welcomes people and lives faith"
-  >
-    <div class="flex gap-4 justify-center">
-      <Button href="/woic/en/about" variant="primary" class="bg-white text-primary-600 hover:bg-neutral-100">
-        Learn More
-      </Button>
-      <Button href="/woic/en/contact" variant="secondary">
-        Get in Touch
-      </Button>
-    </div>
-  </Hero>
+  {pageData.data.hero && (
+    <Hero
+      title={pageData.data.hero.title}
+      subtitle={pageData.data.hero.subtitle}
+    >
+      {pageData.data.hero.buttons && (
+        <div class="flex gap-4 justify-center">
+          {pageData.data.hero.buttons.map(btn => (
+            <Button
+              href={btn.href}
+              variant={btn.variant}
+              class={btn.className}
+            >
+              {btn.label}
+            </Button>
+          ))}
+        </div>
+      )}
+    </Hero>
+  )}
 
-  <Section
-    title="Our Community"
-    subtitle="We are a vibrant community of people who live and share faith together"
-  >
-    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      <Card>
-        <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">
-          Services
-        </h3>
-        <p class="text-neutral-600 dark:text-neutral-400 mb-4">
-          Every Sunday we worship together. Come and experience a warm community.
-        </p>
-        <Button href="/woic/en/services" variant="primary" class="w-full">
-          View Times
-        </Button>
-      </Card>
+  {pageData.data.sections.map(section => {
+    if (section.type === 'cards') {
+      return (
+        <Section
+          title={section.title}
+          subtitle={section.subtitle}
+          background={section.background}
+        >
+          <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {section.cards?.map(card => (
+              <Card>
+                <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">
+                  {card.title}
+                </h3>
+                <p class="text-neutral-600 dark:text-neutral-400 mb-4">
+                  {card.description}
+                </p>
+                {card.button && (
+                  <Button href={card.button.href} variant="primary" class="w-full">
+                    {card.button.label}
+                  </Button>
+                )}
+              </Card>
+            ))}
+          </div>
+        </Section>
+      );
+    }
 
-      <Card>
-        <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">
-          Events
-        </h3>
-        <p class="text-neutral-600 dark:text-neutral-400 mb-4">
-          Discover our diverse events and programs for all age groups.
-        </p>
-        <Button href="/woic/en/events" variant="primary" class="w-full">
-          Explore Program
-        </Button>
-      </Card>
-
-      <Card>
-        <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">
-          Community
-        </h3>
-        <p class="text-neutral-600 dark:text-neutral-400 mb-4">
-          Get to know us and become part of our growing community.
-        </p>
-        <Button href="/woic/en/about" variant="primary" class="w-full">
-          About Us
-        </Button>
-      </Card>
-    </div>
-  </Section>
-
-  <Section background="gray" title="Latest News">
-    <div class="max-w-3xl mx-auto text-center">
-      <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
-        Stay updated with our latest news and events.
-      </p>
-      <Button href="/woic/en/events" variant="primary">
-        All Events
-      </Button>
-    </div>
-  </Section>
+    if (section.type === 'cta') {
+      return (
+        <Section background={section.background} title={section.title}>
+          <div class="max-w-3xl mx-auto text-center">
+            <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
+              {section.cta?.text}
+            </p>
+            {section.cta?.button && (
+              <Button href={section.cta.button.href} variant="primary">
+                {section.cta.button.label}
+              </Button>
+            )}
+          </div>
+        </Section>
+      );
+    }
+  })}
 
   <Footer slot="default-footer" lang={lang} />
 </BaseLayout>

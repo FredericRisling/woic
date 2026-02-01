@@ -1,0 +1,42 @@
+meta:
+  title: "Media"
+  description: "Sermons, videos, and audio messages from WOIC Berlin"
+
+hero:
+  title: "Media"
+  subtitle: "Sermons, livestreams, and more"
+
+sections:
+  - type: "text"
+    title: "Livestream"
+    content: "Our Sunday services are available via Zoom. Join us live or watch recordings of past sermons on our YouTube channel."
+    placeholder: "Livestream player will be integrated here"
+
+  - type: "media"
+    title: "Video Sermons"
+    background: "gray"
+    youtubeChannel: "https://www.youtube.com/@w.o.i.cberlin171"
+    videos:
+      - title: "Sunday Sermons"
+        description: "Watch our latest and past Sunday sermons on YouTube"
+      - title: "Special Services"
+        description: "Recordings of Easter, Good Friday, and other special services"
+      - title: "Teaching Series"
+        description: "In-depth Bible teaching and study sessions"
+
+  - type: "html"
+    title: "Audio Sermons"
+    html: |
+      <p class="text-lg text-neutral-600 dark:text-neutral-400">
+        Selected audio sermons and teachings:
+      </p>
+      <ul class="text-neutral-600 dark:text-neutral-400">
+        <li><strong>The Power Of Worship</strong></li>
+        <li><strong>4 Important Things To Know About Worship</strong></li>
+        <li><strong>The Prayer Of Dedication — Prayer Secret 4</strong></li>
+        <li><strong>Prayer Of Agreement</strong></li>
+        <li><strong>How To Get Answers To Your Prayers — Prayer Secrets</strong></li>
+        <li><strong>Equipping for Ministry</strong></li>
+        <li><strong>Jesus The Baptiser Of The Holy Spirit</strong></li>
+        <li><strong>Understanding The Manifestations Of The Spirit</strong></li>
+      </ul>

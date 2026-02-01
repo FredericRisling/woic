@@ -1,4 +1,5 @@
 ---
+import { getEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
@@ -7,137 +8,68 @@ import Section from '../../components/ui/Section.astro';
 import Card from '../../components/ui/Card.astro';
 
 const lang = 'en';
+const pageData = await getEntry('pages', `${lang}/events`);
 ---
 
 <BaseLayout
-  title="Events"
-  description="Discover our upcoming events and programs"
+  title={pageData.data.meta.title}
+  description={pageData.data.meta.description}
   lang={lang}
 >
   <Header slot="default-header" lang={lang} />
 
   <Hero
-    title="Events"
-    subtitle="Discover our programs and community activities"
+    title={pageData.data.hero.title}
+    subtitle={pageData.data.hero.subtitle}
   />
 
-  <Section title="Upcoming Events">
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <Card>
-        <div class="mb-4">
-          <span class="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-medium rounded-full">
-            Weekly
-          </span>
-        </div>
-        <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">
-          Bible Study Group
-        </h3>
-        <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
-          Thursdays, 7:00 PM
-        </p>
-        <p class="text-neutral-600 dark:text-neutral-400">
-          Study the Bible together in a relaxed atmosphere with discussion and sharing.
-        </p>
-      </Card>
+  {pageData.data.sections.map(section => {
+    if (section.type === 'events') {
+      return (
+        <Section title={section.title}>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {section.events.map(event => (
+              <Card>
+                <div class="mb-4">
+                  <span class={`inline-block px-3 py-1 ${
+                    event.badgeColor === 'primary'
+                      ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
+                      : 'bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300'
+                  } text-sm font-medium rounded-full`}>
+                    {event.badge}
+                  </span>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">
+                  {event.title}
+                </h3>
+                <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
+                  {event.time}
+                </p>
+                <p class="text-neutral-600 dark:text-neutral-400">
+                  {event.description}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </Section>
+      );
+    }
 
-      <Card>
-        <div class="mb-4">
-          <span class="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-medium rounded-full">
-            Weekly
-          </span>
-        </div>
-        <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">
-          Youth Group
-        </h3>
-        <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
-          Fridays, 6:00 PM
-        </p>
-        <p class="text-neutral-600 dark:text-neutral-400">
-          Games, discussions, and fellowship for teenagers ages 12 and up.
-        </p>
-      </Card>
-
-      <Card>
-        <div class="mb-4">
-          <span class="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-medium rounded-full">
-            Monthly
-          </span>
-        </div>
-        <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">
-          Community Breakfast
-        </h3>
-        <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
-          First Sunday of the month
-        </p>
-        <p class="text-neutral-600 dark:text-neutral-400">
-          Breakfast together after the service - a great opportunity to get to know each other.
-        </p>
-      </Card>
-
-      <Card>
-        <div class="mb-4">
-          <span class="inline-block px-3 py-1 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 text-sm font-medium rounded-full">
-            Special
-          </span>
-        </div>
-        <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">
-          Family Day
-        </h3>
-        <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
-          Details to follow
-        </p>
-        <p class="text-neutral-600 dark:text-neutral-400">
-          A special day for the whole family with activities, games, and shared meals.
-        </p>
-      </Card>
-
-      <Card>
-        <div class="mb-4">
-          <span class="inline-block px-3 py-1 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 text-sm font-medium rounded-full">
-            Special
-          </span>
-        </div>
-        <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">
-          Summer Camp
-        </h3>
-        <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
-          Details to follow
-        </p>
-        <p class="text-neutral-600 dark:text-neutral-400">
-          A week full of adventure, community, and faith for children and teenagers.
-        </p>
-      </Card>
-
-      <Card>
-        <div class="mb-4">
-          <span class="inline-block px-3 py-1 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 text-sm font-medium rounded-full">
-            Special
-          </span>
-        </div>
-        <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">
-          Christmas Concert
-        </h3>
-        <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
-          Details to follow
-        </p>
-        <p class="text-neutral-600 dark:text-neutral-400">
-          Festive music and singing for the Christmas season with our community choir.
-        </p>
-      </Card>
-    </div>
-  </Section>
-
-  <Section background="gray">
-    <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-2xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
-        Stay Informed
-      </h2>
-      <p class="text-lg text-neutral-600 dark:text-neutral-400">
-        Would you like to stay updated about our events?
-        Contact us to be added to our mailing list.
-      </p>
-    </div>
-  </Section>
+    if (section.type === 'text') {
+      return (
+        <Section background={section.background}>
+          <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
+              {section.title}
+            </h2>
+            <p class="text-lg text-neutral-600 dark:text-neutral-400">
+              {section.content}
+            </p>
+          </div>
+        </Section>
+      );
+    }
+  })}
 
   <Footer slot="default-footer" lang={lang} />
 </BaseLayout>

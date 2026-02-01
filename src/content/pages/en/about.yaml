@@ -1,0 +1,58 @@
+meta:
+  title: "About Us"
+  description: "Learn about Word of Faith Outreach International Center, our mission, leadership, and programs"
+
+hero:
+  title: "About Us"
+  subtitle: "Word of Faith Outreach International Center (W.O.I.C. e.V.)"
+
+sections:
+  - type: "html"
+    html: |
+      <h2>Our Mission</h2>
+      <p class="text-lg text-neutral-600 dark:text-neutral-400">
+        Word of Faith Outreach International Center (W.O.I.C. e.V.) is committed to:
+      </p>
+      <ul class="text-neutral-600 dark:text-neutral-400">
+        <li><strong>Teaching</strong> people the Faith of God</li>
+        <li><strong>Helping</strong> people rediscover their true self-image in God</li>
+        <li><strong>Educating</strong> people to shine and lead the world</li>
+        <li><strong>Inspiring</strong> people to pray, praise and worship God, and challenging them to reach out to the unsaved</li>
+      </ul>
+
+      <h2>Our Philosophy</h2>
+      <p class="text-neutral-600 dark:text-neutral-400">
+        Prayer, Praise &amp; Worship of God Almighty is liberating, because of the pleasure it gives God.
+        We believe that worshippers are called to advance God's praise on earth and honor Him through worship,
+        for God dwells in the praise of His people.
+      </p>
+      <blockquote class="border-l-4 border-primary-500 pl-4 my-4 italic text-neutral-600 dark:text-neutral-400">
+        "Pray without ceasing" — 1 Thessalonians 5:17
+      </blockquote>
+
+      <h2>Leadership</h2>
+      <p class="text-neutral-600 dark:text-neutral-400">
+        <strong>Pastor and Stella Oppong</strong> — Senior Pastor and Overseer<br>
+        Our community is led by a dedicated team committed to the spiritual growth
+        and care of our congregation.
+      </p>
+
+  - type: "cards"
+    title: "Our Programs"
+    background: "gray"
+    cards:
+      - title: "Sunday Mentoring & Service"
+        time: "Sundays, 11:00 - 13:30"
+        description: "In-person and via Zoom. Join us for worship, teaching, and fellowship. Various group options available."
+        button:
+          label: "Service Times"
+          href: "/woic/en/services"
+      - title: "Children & Youth Groups"
+        time: "Sundays, 12:00 - 12:45"
+        description: "Programs for children and young people up to 16 years old. A place to grow in faith and friendships."
+      - title: "Telephone Prayer Line"
+        time: "Monday - Saturday, three times daily"
+        description: "Join us in prayer at 5:00 AM, 12:00 PM, and 8:00 PM. Dial 030 5201 4350 to connect."
+        button:
+          label: "More Details"
+          href: "/woic/en/services"

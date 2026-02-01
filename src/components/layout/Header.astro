@@ -1,35 +1,12 @@
 ---
+import { getEntry } from 'astro:content';
+
 interface Props {
   lang: 'de' | 'en';
 }
 
 const { lang } = Astro.props;
-
-const churchName = {
-  de: 'Kirche Name',
-  en: 'Church Name'
-};
-
-const navItems = {
-  de: [
-    { href: '/woic/de', label: 'Startseite' },
-    { href: '/woic/de/about', label: 'Über uns' },
-    { href: '/woic/de/services', label: 'Gottesdienste' },
-    { href: '/woic/de/events', label: 'Veranstaltungen' },
-    { href: '/woic/de/media', label: 'Medien' },
-    { href: '/woic/de/contact', label: 'Kontakt' },
-    { href: '/woic/de/donations', label: 'Spenden' },
-  ],
-  en: [
-    { href: '/woic/en', label: 'Home' },
-    { href: '/woic/en/about', label: 'About' },
-    { href: '/woic/en/services', label: 'Services' },
-    { href: '/woic/en/events', label: 'Events' },
-    { href: '/woic/en/media', label: 'Media' },
-    { href: '/woic/en/contact', label: 'Contact' },
-    { href: '/woic/en/donations', label: 'Donations' },
-  ]
-};
+const globalData = await getEntry('global', lang);
 
 const currentPath = Astro.url.pathname;
 const otherLang = lang === 'de' ? 'en' : 'de';
@@ -43,20 +20,20 @@ const switchUrl = `/woic/${otherLang}${currentPathWithoutLang || '/'}`;
       <!-- Church Name/Logo -->
       <div class="flex items-center space-x-3">
         <img
-          src="/woic/assets/images/ChurchLogo.png"
+          src={globalData.data.organization.logo}
           alt="Church Logo"
           class="h-10 w-auto"
           width="40"
           height="40"
         />
         <h1 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">
-          {churchName[lang]}
+          {globalData.data.site.name}
         </h1>
       </div>
 
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center space-x-6">
-        {navItems[lang].map((item) => (
+        {globalData.data.navigation.map((item) => (
           <a
             href={item.href}
             class={`text-sm font-medium transition-colors ${
@@ -100,7 +77,7 @@ const switchUrl = `/woic/${otherLang}${currentPathWithoutLang || '/'}`;
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden border-t border-neutral-200 dark:border-neutral-700">
       <nav class="px-4 py-4 space-y-2">
-        {navItems[lang].map((item) => (
+        {globalData.data.navigation.map((item) => (
           <a
             href={item.href}
             class={`block py-2 px-3 rounded-lg text-sm font-medium transition-colors ${

@@ -1,4 +1,5 @@
 ---
+import { getEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
@@ -8,83 +9,76 @@ import Card from '../../components/ui/Card.astro';
 import Container from '../../components/ui/Container.astro';
 
 const lang = 'de';
+const pageData = await getEntry('pages', `${lang}/services`);
 ---
 
 <BaseLayout
-  title="Gottesdienste"
-  description="Informationen zu unseren Gottesdiensten und Zeiten"
+  title={pageData.data.meta.title}
+  description={pageData.data.meta.description}
   lang={lang}
 >
   <Header slot="default-header" lang={lang} />
 
   <Hero
-    title="Gottesdienste"
-    subtitle="Feiern Sie mit uns - Jeden Sonntag und bei besonderen Anlässen"
+    title={pageData.data.hero.title}
+    subtitle={pageData.data.hero.subtitle}
   />
 
-  <Section title="Gottesdienstzeiten">
-    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-      <Card>
-        <h3 class="text-2xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
-          Sonntagsgottesdienst
-        </h3>
-        <p class="text-lg font-semibold text-primary-600 dark:text-primary-400 mb-3">
-          Jeden Sonntag um 10:00 Uhr
-        </p>
-        <p class="text-neutral-600 dark:text-neutral-400">
-          Unser Hauptgottesdienst mit Predigt, Musik und Gemeinschaft.
-          Kinder und Familien sind herzlich willkommen.
-        </p>
-      </Card>
+  {pageData.data.sections.map(section => {
+    if (section.type === 'cards') {
+      return (
+        <Section title={section.title}>
+          <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {section.cards.map(card => (
+              <Card>
+                <h3 class="text-2xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
+                  {card.title}
+                </h3>
+                <p class="text-lg font-semibold text-primary-600 dark:text-primary-400 mb-3">
+                  {card.time}
+                </p>
+                <p class="text-neutral-600 dark:text-neutral-400">
+                  {card.description}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </Section>
+      );
+    }
 
-      <Card>
-        <h3 class="text-2xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
-          Abendgottesdienst
-        </h3>
-        <p class="text-lg font-semibold text-primary-600 dark:text-primary-400 mb-3">
-          Jeden Mittwoch um 19:00 Uhr
-        </p>
-        <p class="text-neutral-600 dark:text-neutral-400">
-          Ein ruhigerer, besinnlicher Gottesdienst in der Wochenmitte
-          mit Gebet und kurzer Andacht.
-        </p>
-      </Card>
-    </div>
-  </Section>
+    if (section.type === 'html') {
+      return (
+        <Section title={section.title} background={section.background}>
+          <Container size="md">
+            <div class="prose dark:prose-invert max-w-none" set:html={section.html} />
+          </Container>
+        </Section>
+      );
+    }
 
-  <Section background="gray" title="Was Sie erwartet">
-    <Container size="md">
-      <div class="prose dark:prose-invert max-w-none">
-        <p class="text-lg text-neutral-600 dark:text-neutral-400">
-          Unsere Gottesdienste sind eine Mischung aus traditionellen und modernen Elementen.
-          Sie können mit herzlicher Musik, relevanten Predigten und einer einladenden Atmosphäre rechnen.
-        </p>
-        <ul class="text-neutral-600 dark:text-neutral-400">
-          <li>Zeitgemäße Anbetungsmusik</li>
-          <li>Biblisch fundierte Predigten</li>
-          <li>Kindergottesdienst für die Kleinen</li>
-          <li>Gemeinschaft bei Kaffee nach dem Gottesdienst</li>
-          <li>Barrierefreier Zugang</li>
-        </ul>
-      </div>
-    </Container>
-  </Section>
-
-  <Section title="Online-Gottesdienste">
-    <Container size="md">
-      <div class="text-center">
-        <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
-          Können Sie nicht persönlich dabei sein? Kein Problem! Unsere Gottesdienste werden live übertragen.
-        </p>
-        <a
-          href="/woic/de/media"
-          class="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors"
-        >
-          Zum Livestream
-        </a>
-      </div>
-    </Container>
-  </Section>
+    if (section.type === 'text') {
+      return (
+        <Section title={section.title}>
+          <Container size="md">
+            <div class="text-center">
+              <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
+                {section.content}
+              </p>
+              {section.button && (
+                <a
+                  href={section.button.href}
+                  class="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors"
+                >
+                  {section.button.text}
+                </a>
+              )}
+            </div>
+          </Container>
+        </Section>
+      );
+    }
+  })}
 
   <Footer slot="default-footer" lang={lang} />
 </BaseLayout>

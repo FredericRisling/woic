@@ -1,0 +1,58 @@
+meta:
+  title: "Über uns"
+  description: "Erfahren Sie mehr über das Word of Faith Outreach International Center, unsere Mission, Leitung und Programme"
+
+hero:
+  title: "Über uns"
+  subtitle: "Word of Faith Outreach International Center (W.O.I.C. e.V.)"
+
+sections:
+  - type: "html"
+    html: |
+      <h2>Unsere Mission</h2>
+      <p class="text-lg text-neutral-600 dark:text-neutral-400">
+        Das Word of Faith Outreach International Center (W.O.I.C. e.V.) hat sich verpflichtet:
+      </p>
+      <ul class="text-neutral-600 dark:text-neutral-400">
+        <li><strong>Menschen zu lehren</strong> den Glauben Gottes</li>
+        <li><strong>Menschen zu helfen</strong> ihr wahres Selbstbild in Gott wiederzuentdecken</li>
+        <li><strong>Menschen auszubilden</strong> zu leuchten und die Welt zu führen</li>
+        <li><strong>Menschen zu inspirieren</strong> zu beten, Gott zu loben und anzubeten, und sie herauszufordern, die Unerlösten zu erreichen</li>
+      </ul>
+
+      <h2>Unsere Philosophie</h2>
+      <p class="text-neutral-600 dark:text-neutral-400">
+        Gebet, Lobpreis &amp; Anbetung des allmächtigen Gottes ist befreiend, weil es Gott Freude bereitet.
+        Wir glauben, dass Anbeter berufen sind, Gottes Lob auf Erden voranzutragen und Ihn durch Anbetung zu ehren,
+        denn Gott wohnt im Lobpreis seines Volkes.
+      </p>
+      <blockquote class="border-l-4 border-primary-500 pl-4 my-4 italic text-neutral-600 dark:text-neutral-400">
+        „Betet ohne Unterlass" — 1. Thessalonicher 5,17
+      </blockquote>
+
+      <h2>Leitung</h2>
+      <p class="text-neutral-600 dark:text-neutral-400">
+        <strong>Pastor und Stella Oppong</strong> — Leitender Pastor und Aufseher<br>
+        Unsere Gemeinde wird von einem engagierten Team geleitet, das sich dem geistlichen Wachstum
+        und der Betreuung unserer Gemeinde verschrieben hat.
+      </p>
+
+  - type: "cards"
+    title: "Unsere Programme"
+    background: "gray"
+    cards:
+      - title: "Sonntags-Mentoring & Gottesdienst"
+        time: "Sonntags, 11:00 - 13:30 Uhr"
+        description: "Vor Ort und über Zoom. Kommen Sie zum Gottesdienst, zur Lehre und zur Gemeinschaft. Verschiedene Gruppenangebote verfügbar."
+        button:
+          label: "Gottesdienstzeiten"
+          href: "/woic/de/services"
+      - title: "Kinder- & Jugendgruppen"
+        time: "Sonntags, 12:00 - 12:45 Uhr"
+        description: "Programme für Kinder und Jugendliche bis 16 Jahre. Ein Ort, um im Glauben und in Freundschaften zu wachsen."
+      - title: "Gebetstelefon"
+        time: "Montag - Samstag, dreimal täglich"
+        description: "Beten Sie mit uns um 5:00, 12:00 und 20:00 Uhr. Wählen Sie 030 5201 4350 zum Verbinden."
+        button:
+          label: "Weitere Details"
+          href: "/woic/de/services"

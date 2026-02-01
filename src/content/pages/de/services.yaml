@@ -1,0 +1,58 @@
+meta:
+  title: "Gottesdienste"
+  description: "Gottesdienstzeiten und Möglichkeiten, mit WOIC Berlin anzubeten"
+
+hero:
+  title: "Gottesdienste"
+  subtitle: "Feiern Sie mit uns - Jeden Sonntag und unter der Woche"
+
+sections:
+  - type: "cards"
+    title: "Gottesdienstzeiten"
+    cards:
+      - title: "Sonntagsgottesdienst"
+        time: "Jeden Sonntag, 11:00 - 13:30 Uhr"
+        description: "Unser Hauptgottesdienst mit Anbetung, Lehre und Gemeinschaft. Sowohl vor Ort in unserer Kirche als auch über Zoom. Unsere Kirche ist offen für Menschen aller Nationen."
+        badge: "Vor Ort & Zoom"
+      - title: "Kinder- & Jugendgruppen"
+        time: "Jeden Sonntag, 12:00 - 12:45 Uhr"
+        description: "Programme für Kinder und Jugendliche bis 16 Jahre. Gemeinsam wachsen in Glauben, Freundschaft und Spaß."
+
+  - type: "html"
+    title: "Über Zoom teilnehmen"
+    background: "gray"
+    html: |
+      <p class="text-lg text-neutral-600 dark:text-neutral-400">
+        Sie können nicht persönlich dabei sein? Nehmen Sie über Zoom an unserem Sonntagsgottesdienst teil:
+      </p>
+      <ul class="text-neutral-600 dark:text-neutral-400">
+        <li><strong>Zoom Meeting-ID:</strong> 923 8639 6816</li>
+        <li><strong>Passcode:</strong> 775470#</li>
+      </ul>
+      <p class="text-neutral-600 dark:text-neutral-400 mt-4">
+        Treten Sie einfach mit der Meeting-ID und dem Passcode bei, um von überall auf der Welt mit uns anzubeten.
+      </p>
+
+  - type: "html"
+    title: "Gebetstelefon"
+    html: |
+      <p class="text-lg text-neutral-600 dark:text-neutral-400">
+        Nehmen Sie an unserem Gebetstelefon teil, Montag bis Samstag. Wir beten dreimal täglich gemeinsam:
+      </p>
+      <ul class="text-neutral-600 dark:text-neutral-400">
+        <li><strong>Morgens:</strong> 5:00 - 5:30 Uhr</li>
+        <li><strong>Mittags:</strong> 12:00 - 12:30 Uhr</li>
+        <li><strong>Abends:</strong> 20:00 - 20:30 Uhr</li>
+      </ul>
+      <p class="text-neutral-600 dark:text-neutral-400 mt-4">
+        <strong>Einwahl:</strong> 030 5201 4350<br>
+        <strong>Passwort:</strong> 799671#
+      </p>
+
+  - type: "text"
+    title: "Online-Gottesdienste"
+    background: "gray"
+    content: "Schauen Sie sich unsere Predigten und vergangene Gottesdienste auf unserer Medienseite an."
+    button:
+      text: "Predigten ansehen"
+      href: "/woic/de/media"

@@ -1,4 +1,5 @@
 ---
+import { getEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
@@ -8,92 +9,72 @@ import Card from '../../components/ui/Card.astro';
 import Container from '../../components/ui/Container.astro';
 
 const lang = 'en';
+const pageData = await getEntry('pages', `${lang}/donations`);
 ---
 
 <BaseLayout
-  title="Donations"
-  description="Support our work with your donation"
+  title={pageData.data.meta.title}
+  description={pageData.data.meta.description}
   lang={lang}
 >
   <Header slot="default-header" lang={lang} />
 
   <Hero
-    title="Donations"
-    subtitle="Your support makes a difference"
+    title={pageData.data.hero.title}
+    subtitle={pageData.data.hero.subtitle}
   />
 
-  <Section>
-    <Container size="md">
-      <div class="prose dark:prose-invert max-w-none mb-12">
-        <p class="text-lg text-neutral-600 dark:text-neutral-400">
-          Your donation enables us to continue our mission and serve our community.
-          We are grateful for all support, large or small.
-        </p>
-      </div>
+  {pageData.data.sections.map(section => {
+    if (section.type === 'html' && !section.bankTransfer) {
+      return (
+        <Section>
+          <Container size="md">
+            <div class="prose dark:prose-invert max-w-none" set:html={section.html} />
+          </Container>
+        </Section>
+      );
+    }
 
-      <div class="grid md:grid-cols-2 gap-8 mb-12">
-        <Card>
-          <h3 class="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
-            Bank Transfer
-          </h3>
-          <div class="space-y-2 text-neutral-600 dark:text-neutral-400">
-            <p><strong>Account Holder:</strong> Church Name</p>
-            <p><strong>IBAN:</strong> DE00 0000 0000 0000 0000 00</p>
-            <p><strong>BIC:</strong> BANK DE XX XXX</p>
-            <p><strong>Bank:</strong> Sample Bank</p>
-            <p class="text-sm mt-4">
-              Please use "Donation" as the payment reference.
-            </p>
-          </div>
-        </Card>
+    if (section.type === 'donations') {
+      return (
+        <Section>
+          <Container size="md">
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+              <Card>
+                <h3 class="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
+                  {section.bankTransfer.title}
+                </h3>
+                <div class="space-y-2 text-neutral-600 dark:text-neutral-400">
+                  <p><strong>Account Holder:</strong> {section.bankTransfer.accountHolder}</p>
+                  <p><strong>IBAN:</strong> {section.bankTransfer.iban}</p>
+                  <p><strong>BIC:</strong> {section.bankTransfer.bic}</p>
+                  <p><strong>Bank:</strong> {section.bankTransfer.bank}</p>
+                  <p class="text-sm mt-4">
+                    {section.bankTransfer.note}
+                  </p>
+                </div>
+              </Card>
 
-        <Card>
-          <h3 class="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
-            Online Donation
-          </h3>
-          <p class="text-neutral-600 dark:text-neutral-400 mb-4">
-            You can also donate securely online. We accept various payment methods.
-          </p>
-          <button class="w-full px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
-            Donate Online Now
-          </button>
-          <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-3">
-            Secure connection via encrypted transmission
-          </p>
-        </Card>
-      </div>
-
-      <div class="bg-primary-50 dark:bg-primary-900/20 rounded-lg p-6 mb-8">
-        <h3 class="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
-          Tax Deductibility
-        </h3>
-        <p class="text-neutral-600 dark:text-neutral-400">
-          Donations to our community are tax-deductible. You will automatically receive a
-          donation receipt for your tax return. For donations under 300 euros, your
-          bank statement is sufficient as proof.
-        </p>
-      </div>
-
-      <div class="prose dark:prose-invert max-w-none">
-        <h3>How Are Your Donations Used?</h3>
-        <ul class="text-neutral-600 dark:text-neutral-400">
-          <li>Maintenance and care of our buildings</li>
-          <li>Community work and programs</li>
-          <li>Support for those in need in our community</li>
-          <li>Children and youth work</li>
-          <li>Mission projects and social work</li>
-          <li>Music and worship</li>
-        </ul>
-
-        <h3>Transparency</h3>
-        <p class="text-neutral-600 dark:text-neutral-400">
-          We value responsible use of your donations.
-          We are happy to provide our annual report upon request, where you can
-          read about how your donations were used.
-        </p>
-      </div>
-    </Container>
-  </Section>
+              <Card>
+                <h3 class="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
+                  {section.onlineDonation.title}
+                </h3>
+                <p class="text-neutral-600 dark:text-neutral-400 mb-4">
+                  {section.onlineDonation.description}
+                </p>
+                <button class="w-full px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
+                  {section.onlineDonation.buttonText}
+                </button>
+                <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-3">
+                  {section.onlineDonation.secureNote}
+                </p>
+              </Card>
+            </div>
+          </Container>
+        </Section>
+      );
+    }
+  })}
 
   <Footer slot="default-footer" lang={lang} />
 </BaseLayout>

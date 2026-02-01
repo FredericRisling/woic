@@ -1,4 +1,5 @@
 ---
+import { getEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
@@ -7,99 +8,77 @@ import Section from '../../components/ui/Section.astro';
 import Container from '../../components/ui/Container.astro';
 
 const lang = 'en';
+const pageData = await getEntry('pages', `${lang}/media`);
 ---
 
 <BaseLayout
-  title="Media"
-  description="Videos, sermons, and other media content from our community"
+  title={pageData.data.meta.title}
+  description={pageData.data.meta.description}
   lang={lang}
 >
   <Header slot="default-header" lang={lang} />
 
   <Hero
-    title="Media"
-    subtitle="Livestreams, sermons, and more content"
+    title={pageData.data.hero.title}
+    subtitle={pageData.data.hero.subtitle}
   />
 
-  <Section title="Livestream">
-    <Container size="md">
-      <div class="text-center mb-8">
-        <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
-          Our services are livestreamed. Watch past broadcasts
-          or join us live.
-        </p>
-        <div class="aspect-video bg-neutral-200 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
-          <p class="text-neutral-500 dark:text-neutral-400">
-            Livestream player will be integrated here
-          </p>
-        </div>
-      </div>
-    </Container>
-  </Section>
+  {pageData.data.sections.map(section => {
+    if (section.type === 'text') {
+      return (
+        <Section title={section.title}>
+          <Container size="md">
+            <div class="text-center mb-8">
+              <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
+                {section.content}
+              </p>
+              <div class="aspect-video bg-neutral-200 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+                <p class="text-neutral-500 dark:text-neutral-400">
+                  {section.placeholder}
+                </p>
+              </div>
+            </div>
+          </Container>
+        </Section>
+      );
+    }
 
-  <Section background="gray" title="Sermons">
-    <Container size="lg">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white dark:bg-neutral-900 rounded-lg overflow-hidden shadow-sm">
-          <div class="aspect-video bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center">
-            <span class="text-neutral-500 dark:text-neutral-400">Video preview</span>
-          </div>
-          <div class="p-4">
-            <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">
-              Latest Sermon
-            </h3>
-            <p class="text-sm text-neutral-600 dark:text-neutral-400">
-              Title and description of the most recent sermon
-            </p>
-          </div>
-        </div>
+    if (section.type === 'media') {
+      return (
+        <Section background={section.background} title={section.title}>
+          <Container size="lg">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {section.videos.map(video => (
+                <div class="bg-white dark:bg-neutral-900 rounded-lg overflow-hidden shadow-sm">
+                  <div class="aspect-video bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center">
+                    <span class="text-neutral-500 dark:text-neutral-400">Video preview</span>
+                  </div>
+                  <div class="p-4">
+                    <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+                      {video.title}
+                    </h3>
+                    <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                      {video.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </Section>
+      );
+    }
 
-        <div class="bg-white dark:bg-neutral-900 rounded-lg overflow-hidden shadow-sm">
-          <div class="aspect-video bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center">
-            <span class="text-neutral-500 dark:text-neutral-400">Video preview</span>
-          </div>
-          <div class="p-4">
-            <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">
-              More Sermons
-            </h3>
-            <p class="text-sm text-neutral-600 dark:text-neutral-400">
-              Archive of past sermons and teachings
-            </p>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-neutral-900 rounded-lg overflow-hidden shadow-sm">
-          <div class="aspect-video bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center">
-            <span class="text-neutral-500 dark:text-neutral-400">Video preview</span>
-          </div>
-          <div class="p-4">
-            <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">
-              Special Events
-            </h3>
-            <p class="text-sm text-neutral-600 dark:text-neutral-400">
-              Recordings of special services and events
-            </p>
-          </div>
-        </div>
-      </div>
-    </Container>
-  </Section>
-
-  <Section title="Resources">
-    <Container size="md">
-      <div class="prose dark:prose-invert max-w-none">
-        <p class="text-lg text-neutral-600 dark:text-neutral-400">
-          In addition to our video content, we offer various resources:
-        </p>
-        <ul class="text-neutral-600 dark:text-neutral-400">
-          <li>Sermon notes and companion materials</li>
-          <li>Community news and newsletters</li>
-          <li>Prayer requests and updates</li>
-          <li>Photo galleries from events</li>
-        </ul>
-      </div>
-    </Container>
-  </Section>
+    if (section.type === 'html') {
+      return (
+        <Section title={section.title}>
+          <Container size="md">
+            <div class="prose dark:prose-invert max-w-none" set:html={section.html} />
+          </Container>
+        </Section>
+      );
+    }
+  })}
 
   <Footer slot="default-footer" lang={lang} />
 </BaseLayout>

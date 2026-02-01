@@ -1,0 +1,41 @@
+meta:
+  title: "Kontakt"
+  description: "Nehmen Sie Kontakt mit WOIC Berlin auf"
+
+hero:
+  title: "Kontakt"
+  subtitle: "Zögern Sie nicht, uns zu kontaktieren! Wir freuen uns auf Ihren Besuch oder Ihre Nachricht."
+
+sections:
+  - type: "contact"
+    contactInfo:
+      - icon: "location"
+        title: "Adresse"
+        content: |
+          Amendestraße 15<br>
+          (Ecke Breitkopfstraße)<br>
+          13409 Berlin, Deutschland
+      - icon: "phone"
+        title: "Telefon"
+        content: '<a href="tel:+493058583119" class="hover:text-primary-600 dark:hover:text-primary-400">+49 (0) 30 5858 3119</a>'
+      - icon: "phone"
+        title: "Fax"
+        content: '+49 (0) 30 5858 3120'
+      - icon: "email"
+        title: "E-Mail"
+        content: '<a href="mailto:info@woic-bln.org" class="hover:text-primary-600 dark:hover:text-primary-400">info@woic-bln.org</a>'
+      - icon: "clock"
+        title: "Gottesdienstzeiten"
+        content: |
+          Sonntagsgottesdienst: 11:00 - 13:30 Uhr<br>
+          Gebetstelefon: Mo-Sa (5:00, 12:00 & 20:00 Uhr)
+
+    directions:
+      title: "Anfahrt"
+      mapPlaceholder: "Karte wird hier integriert"
+      publicTransport:
+        title: "Mit öffentlichen Verkehrsmitteln"
+        content: 'Amendestraße 15, 13409 Berlin<br>Ecke Breitkopfstraße'
+      parking:
+        title: "Parkmöglichkeiten"
+        content: "Parkmöglichkeiten sind in den umliegenden Straßen vorhanden."

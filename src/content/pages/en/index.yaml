@@ -1,0 +1,64 @@
+meta:
+  title: "Welcome to WOIC Berlin"
+  description: "Word of Faith Outreach International Center - A church open to people of all nations"
+
+hero:
+  title: "Welcome to WOIC Berlin"
+  subtitle: "Our church is open to people of all nations"
+  buttons:
+    - label: "Learn More"
+      href: "/woic/en/about"
+      variant: "primary"
+      className: "bg-white text-primary-600 hover:bg-neutral-100"
+    - label: "Get in Touch"
+      href: "/woic/en/contact"
+      variant: "secondary"
+
+sections:
+  - type: "text"
+    title: "Join. Listen. Pray."
+    background: "white"
+    content: "Word of Faith Outreach International Center (W.O.I.C. e.V.) is committed to teaching people the Faith of God, helping people rediscover their self-image in God, educating people to shine and inspiring them to pray, praise and worship God, also challenging them to reach out to the unsaved."
+
+  - type: "cards"
+    title: "Our Community"
+    subtitle: "Experience faith, fellowship, and growth together"
+    background: "gray"
+    cards:
+      - title: "Sunday Service"
+        description: "Every Sunday from 11:00 to 13:30, both in-person and on Zoom. Come and worship with us."
+        button:
+          label: "View Times"
+          href: "/woic/en/services"
+      - title: "Prayer Line"
+        description: "Join our telephone prayer line Monday to Saturday, three times daily. Together in prayer."
+        button:
+          label: "Learn More"
+          href: "/woic/en/services"
+      - title: "Community"
+        description: "Get to know us and become part of our growing congregation of people from all nations."
+        button:
+          label: "About Us"
+          href: "/woic/en/about"
+
+  - type: "html"
+    background: "white"
+    html: |
+      <div class="text-center">
+        <h2 class="text-2xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">The Faith of God is Necessary</h2>
+        <p class="text-lg text-neutral-600 dark:text-neutral-400 italic mb-2">"For by grace you have been saved through faith..."</p>
+        <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-6">— Ephesians 2:8</p>
+        <p class="text-neutral-600 dark:text-neutral-400">
+          We are saved by faith, made righteous by faith, live by faith, walk by faith,
+          overcome challenges by faith, and please God by faith.
+        </p>
+      </div>
+
+  - type: "cta"
+    title: "Latest News"
+    background: "gray"
+    cta:
+      text: "Stay updated with our latest news, events, and sermons."
+      button:
+        label: "All Events"
+        href: "/woic/en/events"

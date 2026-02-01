@@ -1,0 +1,41 @@
+meta:
+  title: "Contact"
+  description: "Get in touch with WOIC Berlin"
+
+hero:
+  title: "Contact"
+  subtitle: "Don't hesitate to reach out! We look forward to your visit or hearing from you."
+
+sections:
+  - type: "contact"
+    contactInfo:
+      - icon: "location"
+        title: "Address"
+        content: |
+          Amendestraße 15<br>
+          (Junction Breitkopfstraße)<br>
+          13409 Berlin, Germany
+      - icon: "phone"
+        title: "Phone"
+        content: '<a href="tel:+493058583119" class="hover:text-primary-600 dark:hover:text-primary-400">+49 (0) 30 5858 3119</a>'
+      - icon: "phone"
+        title: "Fax"
+        content: '+49 (0) 30 5858 3120'
+      - icon: "email"
+        title: "Email"
+        content: '<a href="mailto:info@woic-bln.org" class="hover:text-primary-600 dark:hover:text-primary-400">info@woic-bln.org</a>'
+      - icon: "clock"
+        title: "Service Times"
+        content: |
+          Sunday Service: 11:00 - 13:30<br>
+          Prayer Line: Mon-Sat (5:00, 12:00 & 20:00)
+
+    directions:
+      title: "Directions"
+      mapPlaceholder: "Map will be integrated here"
+      publicTransport:
+        title: "By Public Transportation"
+        content: 'Amendestraße 15, 13409 Berlin<br>Junction Breitkopfstraße'
+      parking:
+        title: "Parking"
+        content: "Parking is available in the surrounding streets."

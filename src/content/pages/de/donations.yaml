@@ -1,0 +1,61 @@
+meta:
+  title: "Spenden"
+  description: "Unterstützen Sie die Arbeit von WOIC Berlin mit Ihrer Spende"
+
+hero:
+  title: "Spenden"
+  subtitle: "Ihre Unterstützung macht einen Unterschied"
+
+sections:
+  - type: "html"
+    html: |
+      <p class="text-lg text-neutral-600 dark:text-neutral-400">
+        Ihre Spende ermöglicht es dem Word of Faith Outreach International Center, seine Mission
+        fortzusetzen, den Glauben Gottes zu lehren und Menschen aller Nationen zu erreichen.
+        Wir sind dankbar für jede Unterstützung, ob groß oder klein.
+      </p>
+
+  - type: "donations"
+    bankTransfer:
+      title: "Banküberweisung"
+      accountHolder: "[Kontoinhaber - wird aktualisiert]"
+      iban: "[IBAN - wird aktualisiert]"
+      bic: "[BIC - wird aktualisiert]"
+      bank: "[Bankname - wird aktualisiert]"
+      note: "Bitte geben Sie als Verwendungszweck \"Spende\" an."
+
+    onlineDonation:
+      title: "Online-Spende"
+      description: "Sie können auch sicher online spenden. Wir akzeptieren verschiedene Zahlungsmethoden."
+      buttonText: "Jetzt online spenden"
+      secureNote: "Sichere Verbindung über verschlüsselte Übertragung"
+
+  - type: "html"
+    html: |
+      <div class="bg-primary-50 dark:bg-primary-900/20 rounded-lg p-6 mb-8">
+        <h3 class="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
+          Steuerliche Absetzbarkeit
+        </h3>
+        <p class="text-neutral-600 dark:text-neutral-400">
+          Als eingetragener Verein (e.V.) sind Spenden an WOIC Berlin steuerlich absetzbar.
+          Sie erhalten automatisch eine Spendenbescheinigung für Ihre Steuererklärung.
+          Bei Spenden unter 300 Euro genügt der Kontoauszug als Nachweis.
+        </p>
+      </div>
+
+      <h3>Wofür werden Ihre Spenden verwendet?</h3>
+      <ul class="text-neutral-600 dark:text-neutral-400">
+        <li>Gottesdienste und Gemeindeprogramme</li>
+        <li>Kinder- und Jugendarbeit</li>
+        <li>Evangelisation und Öffentlichkeitsarbeit</li>
+        <li>Unterhalt und Pflege unserer Räumlichkeiten</li>
+        <li>Unterstützung von Bedürftigen in unserer Gemeinschaft</li>
+        <li>Missionsprojekte</li>
+      </ul>
+
+      <h3>Transparenz</h3>
+      <p class="text-neutral-600 dark:text-neutral-400">
+        Wir legen Wert auf einen verantwortungsvollen Umgang mit Ihren Spenden.
+        Auf Anfrage stellen wir gerne unseren Jahresbericht zur Verfügung, in dem Sie
+        nachlesen können, wie Ihre Spenden eingesetzt wurden.
+      </p>
