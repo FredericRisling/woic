@@ -24,20 +24,3 @@ sections:
         description: "Aufzeichnungen von Ostern, Karfreitag und anderen besonderen Gottesdiensten"
       - title: "Lehrserien"
         description: "Vertiefte Bibellehre und Studiensitzungen"
-
-  - type: "html"
-    title: "Audio-Predigten"
-    html: |
-      <p class="text-lg text-neutral-600 dark:text-neutral-400">
-        Ausgewählte Audio-Predigten und Lehren:
-      </p>
-      <ul class="text-neutral-600 dark:text-neutral-400">
-        <li><strong>The Power Of Worship</strong></li>
-        <li><strong>4 Important Things To Know About Worship</strong></li>
-        <li><strong>The Prayer Of Dedication — Prayer Secret 4</strong></li>
-        <li><strong>Prayer Of Agreement</strong></li>
-        <li><strong>How To Get Answers To Your Prayers — Prayer Secrets</strong></li>
-        <li><strong>Equipping for Ministry</strong></li>
-        <li><strong>Jesus The Baptiser Of The Holy Spirit</strong></li>
-        <li><strong>Understanding The Manifestations Of The Spirit</strong></li>
-      </ul>
