@@ -23,7 +23,7 @@ sections:
         content: '+49 (0) 30 5858 3120'
       - icon: "email"
         title: "E-Mail"
-        content: '<a href="mailto:info@woic-bln.org" class="hover:text-primary-600 dark:hover:text-primary-400">info@woic-bln.org</a>'
+        content: '<a href="mailto:woic@woic-bln.org" class="hover:text-primary-600 dark:hover:text-primary-400">woic@woic-bln.org</a>'
       - icon: "clock"
         title: "Gottesdienstzeiten"
         content: |

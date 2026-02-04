@@ -1,7 +1,7 @@
 site:
   name: "WOIC Berlin"
   description: "Word of Faith Outreach International Center - Eine Kirche offen für Menschen aller Nationen"
-  email: "info@woic-bln.org"
+  email: "woic@woic-bln.org"
   phone: "+49 30 5858 3119"
 
 organization:
@@ -14,7 +14,7 @@ organization:
     postalCode: "13409"
     country: "DE"
   telephone: "+49 30 5858 3119"
-  email: "info@woic-bln.org"
+  email: "woic@woic-bln.org"
 
 navigation:
   - href: "/woic/de"
@@ -38,7 +38,7 @@ footer:
     address:
       - "Amendestraße 15"
       - "13409 Berlin"
-    email: "info@woic-bln.org"
+    email: "woic@woic-bln.org"
     phone: "+49 30 5858 3119"
   legal:
     privacy: "Datenschutz"
