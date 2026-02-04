@@ -29,7 +29,7 @@ sections:
   - type: "text"
     title: "Stay Informed"
     background: "gray"
-    content: "Would you like to stay updated about our events and special programs? Contact us to be added to our mailing list or follow us on our social media channels."
+    content: "Would you like to stay updated about our events and special programs? Contact us, or follow us on our social media channels."
     button:
       text: "Contact Us"
       href: "/woic/en/contact"
