@@ -17,11 +17,11 @@ sections:
 
   - type: "donations"
     bankTransfer:
-      title: "Bank Transfer"
-      accountHolder: "[Account Holder - to be updated]"
-      iban: "[IBAN - to be updated]"
-      bic: "[BIC - to be updated]"
-      bank: "[Bank Name - to be updated]"
+      title: "Banküberweisung"
+      accountHolder: "W. O. I. C. e.V"
+      iban: "DE56 1005 0000 6603 0459 99"
+      bic: "[BIC - wird aktualisiert]"
+      bank: "Berliner Sparkasse"
       note: "Please use \"Donation\" as the payment reference."
 
     onlineDonation:
@@ -32,30 +32,3 @@ sections:
 
   - type: "html"
     html: |
-      <div class="bg-primary-50 dark:bg-primary-900/20 rounded-lg p-6 mb-8">
-        <h3 class="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
-          Tax Deductibility
-        </h3>
-        <p class="text-neutral-600 dark:text-neutral-400">
-          As a registered association (e.V.), donations to WOIC Berlin are tax-deductible.
-          You will automatically receive a donation receipt for your tax return.
-          For donations under 300 euros, your bank statement is sufficient as proof.
-        </p>
-      </div>
-
-      <h3>How Are Your Donations Used?</h3>
-      <ul class="text-neutral-600 dark:text-neutral-400">
-        <li>Worship services and community programs</li>
-        <li>Children and youth ministry</li>
-        <li>Outreach and evangelism</li>
-        <li>Maintenance and care of our facilities</li>
-        <li>Support for those in need in our community</li>
-        <li>Mission projects</li>
-      </ul>
-
-      <h3>Transparency</h3>
-      <p class="text-neutral-600 dark:text-neutral-400">
-        We value responsible use of your donations.
-        We are happy to provide our annual report upon request, where you can
-        read about how your donations were used.
-      </p>

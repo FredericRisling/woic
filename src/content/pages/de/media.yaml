@@ -9,7 +9,7 @@ hero:
 sections:
   - type: "text"
     title: "Livestream"
-    content: "Unsere Sonntagsgottesdienste sind über Zoom verfügbar. Nehmen Sie live teil oder schauen Sie sich Aufzeichnungen vergangener Predigten auf unserem YouTube-Kanal an."
+    content: "Unsere Sonntagsgottesdienste sind über Zoom oder Youtube live verfügbar. Nehmen Sie live teil oder schauen Sie sich Aufzeichnungen vergangener Predigten auf unserem YouTube-Kanal an."
     youtubeEmbed: "w.o.i.cberlin171"
     placeholder: "Auf YouTube ansehen"
 

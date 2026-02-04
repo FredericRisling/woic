@@ -47,7 +47,6 @@ const pageData = await getEntry('pages', `${lang}/donations`);
                 <div class="space-y-2 text-neutral-600 dark:text-neutral-400">
                   <p><strong>Account Holder:</strong> {section.bankTransfer.accountHolder}</p>
                   <p><strong>IBAN:</strong> {section.bankTransfer.iban}</p>
-                  <p><strong>BIC:</strong> {section.bankTransfer.bic}</p>
                   <p><strong>Bank:</strong> {section.bankTransfer.bank}</p>
                   <p class="text-sm mt-4">
                     {section.bankTransfer.note}
@@ -55,20 +54,7 @@ const pageData = await getEntry('pages', `${lang}/donations`);
                 </div>
               </Card>
 
-              <Card>
-                <h3 class="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
-                  {section.onlineDonation.title}
-                </h3>
-                <p class="text-neutral-600 dark:text-neutral-400 mb-4">
-                  {section.onlineDonation.description}
-                </p>
-                <button class="w-full px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
-                  {section.onlineDonation.buttonText}
-                </button>
-                <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-3">
-                  {section.onlineDonation.secureNote}
-                </p>
-              </Card>
+            
             </div>
           </Container>
         </Section>
