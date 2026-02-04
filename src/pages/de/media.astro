@@ -6,9 +6,17 @@ import Footer from '../../components/layout/Footer.astro';
 import Hero from '../../components/ui/Hero.astro';
 import Section from '../../components/ui/Section.astro';
 import Container from '../../components/ui/Container.astro';
+import YouTubeEmbed from '../../components/ui/YouTubeEmbed.astro';
+import { getLatestVideo } from '../../lib/youtube';
 
 const lang = 'de';
 const pageData = await getEntry('pages', `${lang}/media`);
+
+// Fetch the latest YouTube video at build time
+const youtubeSection = pageData.data.sections.find(s => s.youtubeEmbed);
+const latestVideo = youtubeSection?.youtubeEmbed
+  ? await getLatestVideo(youtubeSection.youtubeEmbed)
+  : null;
 ---
 
 <BaseLayout
@@ -32,11 +40,20 @@ const pageData = await getEntry('pages', `${lang}/media`);
               <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
                 {section.content}
               </p>
-              <div class="aspect-video bg-neutral-200 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
-                <p class="text-neutral-500 dark:text-neutral-400">
-                  {section.placeholder}
-                </p>
-              </div>
+              {section.youtubeEmbed ? (
+                <YouTubeEmbed
+                  videoId={latestVideo?.videoId}
+                  title={latestVideo?.title}
+                  channelUrl={`https://www.youtube.com/@${section.youtubeEmbed}`}
+                  fallbackText={section.placeholder || 'Auf YouTube ansehen'}
+                />
+              ) : (
+                <div class="aspect-video bg-neutral-200 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+                  <p class="text-neutral-500 dark:text-neutral-400">
+                    {section.placeholder}
+                  </p>
+                </div>
+              )}
             </div>
           </Container>
         </Section>

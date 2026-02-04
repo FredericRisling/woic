@@ -10,7 +10,8 @@ sections:
   - type: "text"
     title: "Livestream"
     content: "Our Sunday services are available via Zoom. Join us live or watch recordings of past sermons on our YouTube channel."
-    placeholder: "Livestream player will be integrated here"
+    youtubeEmbed: "w.o.i.cberlin171"
+    placeholder: "Watch on YouTube"
 
   - type: "media"
     title: "Video Sermons"

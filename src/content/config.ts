@@ -94,6 +94,7 @@ const pagesCollection = defineCollection({
       content: z.string().optional(),
       html: z.string().optional(),
       placeholder: z.string().optional(),
+      youtubeEmbed: z.string().optional(), // YouTube channel handle e.g. "w.o.i.cberlin171"
       button: z.object({
         text: z.string(),
         href: z.string(),
