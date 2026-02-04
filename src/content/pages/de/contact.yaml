@@ -33,9 +33,15 @@ sections:
     directions:
       title: "Anfahrt"
       mapPlaceholder: "Karte wird hier integriert"
+      mapButtonText: "In Google Maps öffnen"
       publicTransport:
         title: "Mit öffentlichen Verkehrsmitteln"
-        content: 'Amendestraße 15, 13409 Berlin<br>Ecke Breitkopfstraße'
+        content: |
+          <strong>U-Bahn:</strong><br>
+          U8 Franz-Neumann-Platz → ca. 7 Minuten Fußweg<br>
+          <br>
+          <strong>S-Bahn:</strong><br>
+          S1 & S25 Schönholz → ca. 15 Minuten Fußweg
       parking:
         title: "Parkmöglichkeiten"
         content: "Parkmöglichkeiten sind in den umliegenden Straßen vorhanden."

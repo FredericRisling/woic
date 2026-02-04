@@ -6,6 +6,7 @@ import Footer from '../../components/layout/Footer.astro';
 import Hero from '../../components/ui/Hero.astro';
 import Section from '../../components/ui/Section.astro';
 import Card from '../../components/ui/Card.astro';
+import GoogleMap from '../../components/ui/GoogleMap.astro';
 
 const lang = 'en';
 const pageData = await getEntry('pages', `${lang}/contact`);
@@ -57,11 +58,10 @@ const icons = {
           {pageData.data.sections[0].directions.title}
         </h2>
         <Card>
-          <div class="aspect-video bg-neutral-200 dark:bg-neutral-800 rounded-lg flex items-center justify-center mb-4">
-            <p class="text-neutral-500 dark:text-neutral-400">
-              {pageData.data.sections[0].directions.mapPlaceholder}
-            </p>
-          </div>
+          <GoogleMap
+            address="Amendestraße 15, 13409 Berlin, Germany"
+            buttonText={pageData.data.sections[0].directions.mapButtonText}
+          />
           <div class="prose dark:prose-invert max-w-none">
             <h4>{pageData.data.sections[0].directions.publicTransport.title}</h4>
             <p class="text-sm text-neutral-600 dark:text-neutral-400" set:html={pageData.data.sections[0].directions.publicTransport.content} />

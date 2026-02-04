@@ -137,6 +137,7 @@ const pagesCollection = defineCollection({
       directions: z.object({
         title: z.string(),
         mapPlaceholder: z.string(),
+        mapButtonText: z.string(),
         publicTransport: z.object({
           title: z.string(),
           content: z.string(),

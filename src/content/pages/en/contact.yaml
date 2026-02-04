@@ -33,9 +33,15 @@ sections:
     directions:
       title: "Directions"
       mapPlaceholder: "Map will be integrated here"
+      mapButtonText: "Open in Google Maps"
       publicTransport:
         title: "By Public Transportation"
-        content: 'Amendestraße 15, 13409 Berlin<br>Junction Breitkopfstraße'
+        content: |
+          <strong>Subway (U-Bahn):</strong><br>
+          U8 Franz-Neumann-Platz → approx. 7 minutes walk<br>
+          <br>
+          <strong>S-Bahn:</strong><br>
+          S1 & S25 Schönholz → approx. 15 minutes walk
       parking:
         title: "Parking"
         content: "Parking is available in the surrounding streets."
