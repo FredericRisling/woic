@@ -7,16 +7,18 @@ import Hero from '../../components/ui/Hero.astro';
 import Section from '../../components/ui/Section.astro';
 import Container from '../../components/ui/Container.astro';
 import YouTubeEmbed from '../../components/ui/YouTubeEmbed.astro';
-import { getLatestVideo } from '../../lib/youtube';
+import { getLatestVideos } from '../../lib/youtube';
 
 const lang = 'de';
 const pageData = await getEntry('pages', `${lang}/media`);
 
-// Fetch the latest YouTube video at build time
+// Fetch the latest YouTube videos at build time (1 featured + 3 for the grid)
 const youtubeSection = pageData.data.sections.find(s => s.youtubeEmbed);
-const latestVideo = youtubeSection?.youtubeEmbed
-  ? await getLatestVideo(youtubeSection.youtubeEmbed)
-  : null;
+const videos = youtubeSection?.youtubeEmbed
+  ? await getLatestVideos(youtubeSection.youtubeEmbed, 4)
+  : [];
+const latestVideo = videos[0] ?? null;
+const previousVideos = videos.slice(1);
 ---
 
 <BaseLayout
@@ -65,21 +67,38 @@ const latestVideo = youtubeSection?.youtubeEmbed
         <Section background={section.background} title={section.title}>
           <Container size="lg">
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {section.videos.map(video => (
-                <div class="bg-white dark:bg-neutral-900 rounded-lg overflow-hidden shadow-sm">
-                  <div class="aspect-video bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center">
-                    <span class="text-neutral-500 dark:text-neutral-400">Video-Vorschau</span>
-                  </div>
-                  <div class="p-4">
-                    <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">
-                      {video.title}
-                    </h3>
-                    <p class="text-sm text-neutral-600 dark:text-neutral-400">
-                      {video.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+              {previousVideos.length > 0
+                ? previousVideos.map(video => (
+                    <div class="bg-white dark:bg-neutral-900 rounded-lg overflow-hidden shadow-sm">
+                      <YouTubeEmbed
+                        videoId={video.videoId}
+                        title={video.title}
+                        channelUrl={`https://www.youtube.com/@${youtubeSection?.youtubeEmbed}`}
+                        fallbackText="Auf YouTube ansehen"
+                      />
+                      <div class="p-4">
+                        <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+                          {video.title}
+                        </h3>
+                      </div>
+                    </div>
+                  ))
+                : section.videos?.map(video => (
+                    <div class="bg-white dark:bg-neutral-900 rounded-lg overflow-hidden shadow-sm">
+                      <div class="aspect-video bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center">
+                        <span class="text-neutral-500 dark:text-neutral-400">Video-Vorschau</span>
+                      </div>
+                      <div class="p-4">
+                        <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+                          {video.title}
+                        </h3>
+                        <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                          {video.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))
+              }
             </div>
           </Container>
         </Section>
