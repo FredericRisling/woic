@@ -70,6 +70,41 @@ const pageData = await getEntry('pages', `${lang}/index`);
       );
     }
 
+    if (section.type === 'announcement') {
+      return (
+        <Section background={section.background} title={section.title}>
+          <div class="max-w-3xl mx-auto">
+            {section.announcement && (
+              <div class="bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 rounded-2xl p-8 mb-8 text-center">
+                <span class="inline-block px-3 py-1 bg-primary-600 text-white text-sm font-bold rounded-full mb-4">
+                  {section.announcement.badge}
+                </span>
+                <p class="text-sm font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-wider mb-2">
+                  {section.announcement.heading}
+                </p>
+                <h3 class="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+                  {section.announcement.text}
+                </h3>
+                <p class="text-neutral-600 dark:text-neutral-400">
+                  {section.announcement.description}
+                </p>
+              </div>
+            )}
+            <div class="text-center">
+              <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
+                {section.cta?.text}
+              </p>
+              {section.cta?.button && (
+                <Button href={section.cta.button.href} variant="primary">
+                  {section.cta.button.label}
+                </Button>
+              )}
+            </div>
+          </div>
+        </Section>
+      );
+    }
+
     if (section.type === 'cta') {
       return (
         <Section background={section.background} title={section.title}>

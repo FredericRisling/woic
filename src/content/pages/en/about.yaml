@@ -8,40 +8,79 @@ hero:
 
 sections:
   - type: "html"
+    title: "Our Mission"
     html: |
-      <h2>Our Mission</h2>
-      <p class="text-lg text-neutral-600 dark:text-neutral-400">
+      <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
         Word of Faith Outreach International Center (W.O.I.C. e.V.) is committed to:
       </p>
-      <ul class="text-neutral-600 dark:text-neutral-400">
-        <li><strong>Teaching</strong> people the Faith of God</li>
-        <li><strong>Helping</strong> people rediscover their true self-image in God</li>
-        <li><strong>Educating</strong> people to shine and lead the world</li>
-        <li><strong>Inspiring</strong> people to pray, praise and worship God, and challenging them to reach out to the unsaved</li>
-      </ul>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="flex items-start space-x-3 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-4">
+          <span class="text-primary-600 dark:text-primary-400 text-2xl mt-0.5">&#x1F4D6;</span>
+          <div>
+            <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Teaching</h4>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">Teaching people the Faith of God</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-3 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-4">
+          <span class="text-primary-600 dark:text-primary-400 text-2xl mt-0.5">&#x2764;</span>
+          <div>
+            <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Helping</h4>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">Helping people rediscover their true self-image in God</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-3 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-4">
+          <span class="text-primary-600 dark:text-primary-400 text-2xl mt-0.5">&#x2B50;</span>
+          <div>
+            <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Educating</h4>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">Educating people to shine and lead the world</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-3 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-4">
+          <span class="text-primary-600 dark:text-primary-400 text-2xl mt-0.5">&#x1F64F;</span>
+          <div>
+            <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Inspiring</h4>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">Inspiring people to pray, praise and worship God, and reach out to the unsaved</p>
+          </div>
+        </div>
+      </div>
 
-      <h2>Our Philosophy</h2>
-      <p class="text-neutral-600 dark:text-neutral-400">
-        Prayer, Praise &amp; Worship of God Almighty is liberating, because of the pleasure it gives God.
-        We believe that worshippers are called to advance God's praise on earth and honor Him through worship,
-        for God dwells in the praise of His people.
-      </p>
-      <blockquote class="border-l-4 border-primary-500 pl-4 my-4 italic text-neutral-600 dark:text-neutral-400">
-        "Pray without ceasing" — 1 Thessalonians 5:17
-      </blockquote>
+  - type: "html"
+    title: "Our Philosophy"
+    background: "gray"
+    html: |
+      <div class="max-w-2xl mx-auto text-center">
+        <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
+          Prayer, Praise &amp; Worship of God Almighty is liberating, because of the pleasure it gives God.
+          We believe that worshippers are called to advance God's praise on earth and honor Him through worship,
+          for God dwells in the praise of His people.
+        </p>
+        <blockquote class="border-l-4 border-primary-500 pl-6 py-3 my-6 text-left bg-white dark:bg-neutral-900 rounded-r-lg shadow-sm">
+          <p class="text-lg italic text-neutral-700 dark:text-neutral-300">"Pray without ceasing"</p>
+          <cite class="text-sm text-neutral-500 dark:text-neutral-400 not-italic">— 1 Thessalonians 5:17</cite>
+        </blockquote>
+      </div>
 
-      <h2>Leadership</h2>
-      <img
-        src="/woic/assets/images/PastorIsaacStella.jpg"
-        alt="Pastor and Stella Oppong"
-        loading="lazy"
-        class="rounded-lg shadow-md max-w-md w-full mx-auto my-6"
-      />
-      <p class="text-neutral-600 dark:text-neutral-400">
-        <strong>Pastor and Stella Oppong</strong> — Senior Pastor and Overseer<br>
-        Our community is led by a dedicated team committed to the spiritual growth
-        and care of our congregation.
-      </p>
+  - type: "html"
+    title: "Leadership"
+    html: |
+      <div class="flex flex-col md:flex-row items-center gap-8 max-w-3xl mx-auto">
+        <div class="md:w-1/2">
+          <img
+            src="/woic/assets/images/PastorIsaacStella.jpg"
+            alt="Pastor and Stella Oppong"
+            loading="lazy"
+            class="rounded-2xl shadow-lg w-full"
+          />
+        </div>
+        <div class="md:w-1/2 text-center md:text-left">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">Pastor and Stella Oppong</h3>
+          <p class="text-primary-600 dark:text-primary-400 font-medium mb-4">Senior Pastor and Overseer</p>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Our community is led by a dedicated team committed to the spiritual growth
+            and care of our congregation.
+          </p>
+        </div>
+      </div>
 
   - type: "cards"
     title: "Our Programs"

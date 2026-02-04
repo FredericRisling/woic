@@ -23,15 +23,3 @@ sections:
       bic: "[BIC - wird aktualisiert]"
       bank: "Berliner Sparkasse"
       note: "Bitte geben Sie als Verwendungszweck \"Spende\" an."
-
-    onlineDonation:
-      title: "Online-Spende"
-      description: "Sie können auch sicher online spenden. Wir akzeptieren verschiedene Zahlungsmethoden."
-      buttonText: "Jetzt online spenden"
-      secureNote: "Sichere Verbindung über verschlüsselte Übertragung"
-
-  - type: "html"
-    html: |
-    
-
-    

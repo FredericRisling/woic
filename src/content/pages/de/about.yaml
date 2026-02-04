@@ -8,40 +8,79 @@ hero:
 
 sections:
   - type: "html"
+    title: "Unsere Mission"
     html: |
-      <h2>Unsere Mission</h2>
-      <p class="text-lg text-neutral-600 dark:text-neutral-400">
+      <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
         Das Word of Faith Outreach International Center (W.O.I.C. e.V.) hat sich verpflichtet:
       </p>
-      <ul class="text-neutral-600 dark:text-neutral-400">
-        <li><strong>Menschen zu lehren</strong> den Glauben Gottes</li>
-        <li><strong>Menschen zu helfen</strong> ihr wahres Selbstbild in Gott wiederzuentdecken</li>
-        <li><strong>Menschen auszubilden</strong> zu leuchten und die Welt zu führen</li>
-        <li><strong>Menschen zu inspirieren</strong> zu beten, Gott zu loben und anzubeten, und sie herauszufordern, die Unerlösten zu erreichen</li>
-      </ul>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="flex items-start space-x-3 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-4">
+          <span class="text-primary-600 dark:text-primary-400 text-2xl mt-0.5">&#x1F4D6;</span>
+          <div>
+            <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Lehren</h4>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">Menschen den Glauben Gottes lehren</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-3 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-4">
+          <span class="text-primary-600 dark:text-primary-400 text-2xl mt-0.5">&#x2764;</span>
+          <div>
+            <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Helfen</h4>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">Menschen helfen, ihr wahres Selbstbild in Gott wiederzuentdecken</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-3 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-4">
+          <span class="text-primary-600 dark:text-primary-400 text-2xl mt-0.5">&#x2B50;</span>
+          <div>
+            <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Ausbilden</h4>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">Menschen ausbilden, zu leuchten und die Welt zu führen</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-3 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-4">
+          <span class="text-primary-600 dark:text-primary-400 text-2xl mt-0.5">&#x1F64F;</span>
+          <div>
+            <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Inspirieren</h4>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">Menschen inspirieren zu beten, Gott zu loben und die Unerlösten zu erreichen</p>
+          </div>
+        </div>
+      </div>
 
-      <h2>Unsere Philosophie</h2>
-      <p class="text-neutral-600 dark:text-neutral-400">
-        Gebet, Lobpreis &amp; Anbetung des allmächtigen Gottes ist befreiend, weil es Gott Freude bereitet.
-        Wir glauben, dass Anbeter berufen sind, Gottes Lob auf Erden voranzutragen und Ihn durch Anbetung zu ehren,
-        denn Gott wohnt im Lobpreis seines Volkes.
-      </p>
-      <blockquote class="border-l-4 border-primary-500 pl-4 my-4 italic text-neutral-600 dark:text-neutral-400">
-        „Betet ohne Unterlass" — 1. Thessalonicher 5,17
-      </blockquote>
+  - type: "html"
+    title: "Unsere Philosophie"
+    background: "gray"
+    html: |
+      <div class="max-w-2xl mx-auto text-center">
+        <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
+          Gebet, Lobpreis &amp; Anbetung des allmächtigen Gottes ist befreiend, weil es Gott Freude bereitet.
+          Wir glauben, dass Anbeter berufen sind, Gottes Lob auf Erden voranzutragen und Ihn durch Anbetung zu ehren,
+          denn Gott wohnt im Lobpreis seines Volkes.
+        </p>
+        <blockquote class="border-l-4 border-primary-500 pl-6 py-3 my-6 text-left bg-white dark:bg-neutral-900 rounded-r-lg shadow-sm">
+          <p class="text-lg italic text-neutral-700 dark:text-neutral-300">„Betet ohne Unterlass"</p>
+          <cite class="text-sm text-neutral-500 dark:text-neutral-400 not-italic">— 1. Thessalonicher 5,17</cite>
+        </blockquote>
+      </div>
 
-      <h2>Leitung</h2>
-      <img
-        src="/woic/assets/images/PastorIsaacStella.jpg"
-        alt="Pastor und Stella Oppong"
-        loading="lazy"
-        class="rounded-lg shadow-md max-w-md w-full mx-auto my-6"
-      />
-      <p class="text-neutral-600 dark:text-neutral-400">
-        <strong>Pastor und Stella Oppong</strong> — Leitender Pastor und Aufseher<br>
-        Unsere Gemeinde wird von einem engagierten Team geleitet, das sich dem geistlichen Wachstum
-        und der Betreuung unserer Gemeinde verschrieben hat.
-      </p>
+  - type: "html"
+    title: "Leitung"
+    html: |
+      <div class="flex flex-col md:flex-row items-center gap-8 max-w-3xl mx-auto">
+        <div class="md:w-1/2">
+          <img
+            src="/woic/assets/images/PastorIsaacStella.jpg"
+            alt="Pastor und Stella Oppong"
+            loading="lazy"
+            class="rounded-2xl shadow-lg w-full"
+          />
+        </div>
+        <div class="md:w-1/2 text-center md:text-left">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">Pastor und Stella Oppong</h3>
+          <p class="text-primary-600 dark:text-primary-400 font-medium mb-4">Leitender Pastor und Aufseher</p>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Unsere Gemeinde wird von einem engagierten Team geleitet, das sich dem geistlichen Wachstum
+            und der Betreuung unserer Gemeinde verschrieben hat.
+          </p>
+        </div>
+      </div>
 
   - type: "cards"
     title: "Unsere Programme"

@@ -55,9 +55,14 @@ sections:
         </p>
       </div>
 
-  - type: "cta"
+  - type: "announcement"
     title: "Latest News"
     background: "gray"
+    announcement:
+      badge: "Q1 2026"
+      heading: "This Quarter's Service Theme"
+      text: "Knowing who we are – The identity of the church"
+      description: "This quarter we are exploring our identity as the church of God. Join us on this journey of discovery."
     cta:
       text: "Stay updated with our latest news, events, and sermons."
       button:

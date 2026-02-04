@@ -55,9 +55,14 @@ sections:
         </p>
       </div>
 
-  - type: "cta"
+  - type: "announcement"
     title: "Aktuelles"
     background: "gray"
+    announcement:
+      badge: "Q1 2026"
+      heading: "Gottesdienst-Thema dieses Quartals"
+      text: "Wissen wer wir sind – Die Identität der Gemeinde"
+      description: "In diesem Quartal widmen wir uns der Frage unserer Identität als Gemeinde Gottes. Begleiten Sie uns auf dieser Reise der Entdeckung."
     cta:
       text: "Bleiben Sie auf dem Laufenden über unsere neuesten Nachrichten, Veranstaltungen und Predigten."
       button:

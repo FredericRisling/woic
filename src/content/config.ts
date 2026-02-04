@@ -86,7 +86,7 @@ const pagesCollection = defineCollection({
 
     // Page sections
     sections: z.array(z.object({
-      type: z.enum(['text', 'cards', 'grid', 'info', 'cta', 'html', 'events', 'media', 'contact', 'donations']),
+      type: z.enum(['text', 'cards', 'grid', 'info', 'cta', 'html', 'events', 'media', 'contact', 'donations', 'announcement']),
       title: z.string().optional(),
       subtitle: z.string().optional(),
       background: z.enum(['white', 'gray']).optional(),
@@ -164,6 +164,14 @@ const pagesCollection = defineCollection({
         description: z.string(),
         buttonText: z.string(),
         secureNote: z.string(),
+      }).optional(),
+
+      // For announcement sections
+      announcement: z.object({
+        badge: z.string(),
+        heading: z.string(),
+        text: z.string(),
+        description: z.string(),
       }).optional(),
 
       // For CTA sections

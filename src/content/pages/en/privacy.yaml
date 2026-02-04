@@ -38,8 +38,8 @@ sections:
 
       <h4>What do we use your data for?</h4>
       <p>
-        Some of the data is collected to ensure error-free provision of the website.
-        Other data may be used to analyze your user behavior.
+        The data is collected solely to ensure error-free provision of the website.
+        We do not use any analytics or tracking tools and do not evaluate your user behavior.
       </p>
 
       <h2>2. Hosting</h2>
@@ -82,7 +82,13 @@ sections:
         correction or deletion of this data.
       </p>
 
-      <h2>4. Data Collection on this Website</h2>
+      <h2>4. Cookies</h2>
+      <p>
+        This website does <strong>not use cookies</strong>. No first-party or third-party cookies are set.
+        No tracking tools, analytics services, or other technologies requiring cookies are used.
+      </p>
+
+      <h2>5. Data Collection on this Website</h2>
 
       <h3>Server Log Files</h3>
       <p>
@@ -102,14 +108,14 @@ sections:
         data is based on Art. 6 para. 1 lit. f GDPR.
       </p>
 
-      <h2>5. Contact</h2>
+      <h2>6. Contact</h2>
       <p>
         If you contact us by email or telephone, your inquiry including all resulting
         personal data (name, inquiry) will be stored and processed by us for the purpose
         of processing your request. We do not share this data without your consent.
       </p>
 
-      <h2>6. Changes to this Privacy Policy</h2>
+      <h2>7. Changes to this Privacy Policy</h2>
       <p>
         We reserve the right to occasionally adjust this privacy policy so that it always
         complies with current legal requirements or to implement changes to our services.
@@ -117,5 +123,5 @@ sections:
       </p>
 
       <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-8">
-        Last updated: January 2026
+        Last updated: February 2026
       </p>
