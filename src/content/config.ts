@@ -75,6 +75,7 @@ const pagesCollection = defineCollection({
     hero: z.object({
       title: z.string(),
       subtitle: z.string(),
+      image: z.string().optional(),
       buttons: z.array(z.object({
         label: z.string(),
         href: z.string(),

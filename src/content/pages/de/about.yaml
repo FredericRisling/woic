@@ -31,6 +31,12 @@ sections:
       </blockquote>
 
       <h2>Leitung</h2>
+      <img
+        src="/woic/assets/images/PastorIsaacStella.jpg"
+        alt="Pastor und Stella Oppong"
+        loading="lazy"
+        class="rounded-lg shadow-md max-w-md w-full mx-auto my-6"
+      />
       <p class="text-neutral-600 dark:text-neutral-400">
         <strong>Pastor und Stella Oppong</strong> — Leitender Pastor und Aufseher<br>
         Unsere Gemeinde wird von einem engagierten Team geleitet, das sich dem geistlichen Wachstum

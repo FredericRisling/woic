@@ -12,7 +12,9 @@ const { title, subtitle, image, overlay = true, class: className = '' } = Astro.
 
 <div
   class={`relative bg-gradient-to-br from-primary-500 to-primary-700 text-white py-20 md:py-32 ${className}`.trim()}
-  style={image ? `background-image: url(${image}); background-size: cover; background-position: center;` : ''}
+  style={image ? `background-color: white; background-image: url(${image}); background-size: contain; background-repeat: no-repeat; background-position: center;` : ''}
+  role={image ? "img" : undefined}
+  aria-label={image ? title : undefined}
 >
   {overlay && image && (
     <div class="absolute inset-0 bg-primary-900/60" />

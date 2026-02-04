@@ -5,6 +5,7 @@ meta:
 hero:
   title: "Willkommen bei WOIC Berlin"
   subtitle: "Unsere Kirche ist offen für Menschen aller Nationen"
+  image: "/woic/assets/images/ChurchBuilding.jpg"
   buttons:
     - label: "Mehr erfahren"
       href: "/woic/de/about"

@@ -31,6 +31,12 @@ sections:
       </blockquote>
 
       <h2>Leadership</h2>
+      <img
+        src="/woic/assets/images/PastorIsaacStella.jpg"
+        alt="Pastor and Stella Oppong"
+        loading="lazy"
+        class="rounded-lg shadow-md max-w-md w-full mx-auto my-6"
+      />
       <p class="text-neutral-600 dark:text-neutral-400">
         <strong>Pastor and Stella Oppong</strong> — Senior Pastor and Overseer<br>
         Our community is led by a dedicated team committed to the spiritual growth

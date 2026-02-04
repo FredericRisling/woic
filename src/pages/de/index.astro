@@ -23,6 +23,7 @@ const pageData = await getEntry('pages', `${lang}/index`);
     <Hero
       title={pageData.data.hero.title}
       subtitle={pageData.data.hero.subtitle}
+      image={pageData.data.hero.image}
     >
       {pageData.data.hero.buttons && (
         <div class="flex gap-4 justify-center">
