@@ -68,3 +68,17 @@ sections:
       button:
         label: "All Events"
         href: "/woic/en/events"
+
+  - type: "instagram"
+    title: "Follow Us on Instagram"
+    subtitle: "Latest glimpses from our community"
+    background: "white"
+    instagram:
+      posts:
+        - url: "https://www.instagram.com/p/DTqBpfViL5N/"
+        - url: "https://www.instagram.com/p/DTYH8AJiNeW/"
+      consent:
+        message: "Loading this post will connect to Instagram/Meta servers. Your IP address will be transmitted to Instagram."
+        buttonLabel: "Load Instagram post"
+        privacyLink: "/woic/en/privacy"
+        privacyLinkText: "Our Privacy Policy"

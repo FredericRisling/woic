@@ -109,7 +109,32 @@ sections:
         Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.
       </p>
 
-      <h2>6. Kontaktaufnahme</h2>
+      <h2>6. Eingebettete Inhalte von Drittanbietern</h2>
+
+      <h3>Instagram</h3>
+      <p>
+        Auf unserer Website können Instagram-Beiträge eingebettet werden. Anbieter ist die
+        Meta Platforms Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Irland.
+      </p>
+      <p>
+        Die Instagram-Inhalte werden erst geladen, nachdem Sie durch Klick auf eine
+        Schaltfläche ausdrücklich zugestimmt haben (sog. Zwei-Klick-Lösung). Vor Ihrer
+        Zustimmung wird kein Kontakt zu Servern von Instagram/Meta hergestellt.
+      </p>
+      <p>
+        Wenn Sie dem Laden des Inhalts zustimmen, wird eine Verbindung zu den Servern von
+        Instagram hergestellt. Dabei wird Ihre IP-Adresse an Instagram übermittelt. Instagram
+        kann diese Daten Ihrem Konto zuordnen, wenn Sie bei Instagram eingeloggt sind.
+        Rechtsgrundlage ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO.
+      </p>
+      <p>
+        Weitere Informationen finden Sie in der Datenschutzerklärung von Instagram:
+        <a href="https://privacycenter.instagram.com/policy" target="_blank" rel="noopener noreferrer">
+          https://privacycenter.instagram.com/policy
+        </a>
+      </p>
+
+      <h2>7. Kontaktaufnahme</h2>
       <p>
         Wenn Sie uns per E-Mail oder Telefon kontaktieren, wird Ihre Anfrage inklusive aller
         daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung
@@ -117,7 +142,7 @@ sections:
         Ihre Einwilligung weiter.
       </p>
 
-      <h2>7. Änderung dieser Datenschutzerklärung</h2>
+      <h2>8. Änderung dieser Datenschutzerklärung</h2>
       <p>
         Wir behalten uns vor, diese Datenschutzerklärung gelegentlich anzupassen, damit sie stets
         den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen

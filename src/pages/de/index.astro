@@ -7,6 +7,7 @@ import Hero from '../../components/ui/Hero.astro';
 import Section from '../../components/ui/Section.astro';
 import Card from '../../components/ui/Card.astro';
 import Button from '../../components/ui/Button.astro';
+import InstagramEmbed from '../../components/ui/InstagramEmbed.astro';
 
 const lang = 'de';
 const pageData = await getEntry('pages', `${lang}/index`);
@@ -118,6 +119,26 @@ const pageData = await getEntry('pages', `${lang}/index`);
               </Button>
             )}
           </div>
+        </Section>
+      );
+    }
+
+    if (section.type === 'instagram') {
+      return (
+        <Section
+          title={section.title}
+          subtitle={section.subtitle}
+          background={section.background}
+        >
+          {section.instagram && (
+            <InstagramEmbed
+              posts={section.instagram.posts}
+              consentMessage={section.instagram.consent.message}
+              consentButtonLabel={section.instagram.consent.buttonLabel}
+              privacyLink={section.instagram.consent.privacyLink}
+              privacyLinkText={section.instagram.consent.privacyLinkText}
+            />
+          )}
         </Section>
       );
     }

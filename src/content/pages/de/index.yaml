@@ -68,3 +68,17 @@ sections:
       button:
         label: "Alle Veranstaltungen"
         href: "/woic/de/events"
+
+  - type: "instagram"
+    title: "Folgen Sie uns auf Instagram"
+    subtitle: "Aktuelle Einblicke aus unserer Gemeinde"
+    background: "white"
+    instagram:
+      posts:
+        - url: "https://www.instagram.com/p/DTqBpfViL5N/"
+        - url: "https://www.instagram.com/p/DTYH8AJiNeW/"
+      consent:
+        message: "Mit dem Laden des Instagram-Beitrags wird eine Verbindung zu Instagram/Meta hergestellt. Ihre IP-Adresse wird an Instagram-Server übermittelt."
+        buttonLabel: "Instagram-Beitrag laden"
+        privacyLink: "/woic/de/privacy"
+        privacyLinkText: "Unsere Datenschutzerklärung"

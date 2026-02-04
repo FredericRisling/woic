@@ -86,7 +86,7 @@ const pagesCollection = defineCollection({
 
     // Page sections
     sections: z.array(z.object({
-      type: z.enum(['text', 'cards', 'grid', 'info', 'cta', 'html', 'events', 'media', 'contact', 'donations', 'announcement']),
+      type: z.enum(['text', 'cards', 'grid', 'info', 'cta', 'html', 'events', 'media', 'contact', 'donations', 'announcement', 'instagram']),
       title: z.string().optional(),
       subtitle: z.string().optional(),
       background: z.enum(['white', 'gray']).optional(),
@@ -180,6 +180,20 @@ const pagesCollection = defineCollection({
         button: z.object({
           label: z.string(),
           href: z.string(),
+        }),
+      }).optional(),
+
+      // For Instagram embed sections
+      instagram: z.object({
+        posts: z.array(z.object({
+          url: z.string().url(),
+          caption: z.string().optional(),
+        })).min(1),
+        consent: z.object({
+          message: z.string(),
+          buttonLabel: z.string(),
+          privacyLink: z.string().optional(),
+          privacyLinkText: z.string().optional(),
         }),
       }).optional(),
 

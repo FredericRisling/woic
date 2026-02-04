@@ -1,0 +1,149 @@
+---
+interface InstagramPost {
+  url: string;
+  caption?: string;
+}
+
+interface Props {
+  posts: InstagramPost[];
+  consentMessage: string;
+  consentButtonLabel: string;
+  privacyLink?: string;
+  privacyLinkText?: string;
+}
+
+const { posts, consentMessage, consentButtonLabel, privacyLink, privacyLinkText } = Astro.props;
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+  {posts.map((post) => (
+    <div
+      class="instagram-embed-container"
+      data-post-url={post.url}
+    >
+      {/* Placeholder — shown before consent */}
+      <div class="instagram-placeholder bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl p-8 flex flex-col items-center justify-center text-center min-h-[400px]">
+        <div class="mb-6">
+          <svg
+            class="w-16 h-16 text-neutral-400 dark:text-neutral-500"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+          </svg>
+        </div>
+
+        <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4 max-w-xs">
+          {consentMessage}
+        </p>
+
+        {privacyLink && privacyLinkText && (
+          <a
+            href={privacyLink}
+            class="text-xs mb-4 underline"
+          >
+            {privacyLinkText}
+          </a>
+        )}
+
+        <button
+          type="button"
+          class="instagram-consent-btn btn btn-primary text-sm"
+        >
+          {consentButtonLabel}
+        </button>
+      </div>
+
+      {/* Embed container — hidden until consent */}
+      <div class="instagram-embed-content hidden"></div>
+    </div>
+  ))}
+</div>
+
+<script>
+  let embedScriptLoaded = false;
+  let embedScriptLoading = false;
+
+  function loadInstagramScript(): Promise<void> {
+    if (embedScriptLoaded) return Promise.resolve();
+    if (embedScriptLoading) {
+      return new Promise((resolve) => {
+        const check = setInterval(() => {
+          if (embedScriptLoaded) {
+            clearInterval(check);
+            resolve();
+          }
+        }, 100);
+      });
+    }
+
+    embedScriptLoading = true;
+    return new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = 'https://www.instagram.com/embed.js';
+      script.async = true;
+      script.onload = () => {
+        embedScriptLoaded = true;
+        embedScriptLoading = false;
+        resolve();
+      };
+      script.onerror = () => {
+        embedScriptLoading = false;
+        reject(new Error('Failed to load Instagram embed script'));
+      };
+      document.body.appendChild(script);
+    });
+  }
+
+  function activateEmbed(container: Element): void {
+    const postUrl = container.getAttribute('data-post-url');
+    const placeholder = container.querySelector('.instagram-placeholder') as HTMLElement;
+    const embedContent = container.querySelector('.instagram-embed-content') as HTMLElement;
+    if (!postUrl || !placeholder || !embedContent) return;
+
+    // Build Instagram blockquote that embed.js will transform
+    const blockquote = document.createElement('blockquote');
+    blockquote.className = 'instagram-media';
+    blockquote.setAttribute('data-instgrm-permalink', postUrl);
+    blockquote.setAttribute('data-instgrm-version', '14');
+    blockquote.style.maxWidth = '100%';
+    blockquote.style.width = '100%';
+
+    const link = document.createElement('a');
+    link.href = postUrl;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = 'View on Instagram';
+    blockquote.appendChild(link);
+
+    embedContent.appendChild(blockquote);
+    placeholder.classList.add('hidden');
+    embedContent.classList.remove('hidden');
+
+    loadInstagramScript()
+      .then(() => {
+        if ((window as any).instgrm) {
+          (window as any).instgrm.Embeds.process();
+        }
+      })
+      .catch(() => {
+        // Fallback: direct link if embed.js fails
+        embedContent.innerHTML = '';
+        const fallback = document.createElement('a');
+        fallback.href = postUrl;
+        fallback.target = '_blank';
+        fallback.rel = 'noopener noreferrer';
+        fallback.className = 'btn btn-primary';
+        fallback.textContent = 'View on Instagram';
+        embedContent.appendChild(fallback);
+      });
+  }
+
+  document.querySelectorAll('.instagram-embed-container').forEach((container) => {
+    const btn = container.querySelector('.instagram-consent-btn');
+    if (btn) {
+      btn.addEventListener('click', () => activateEmbed(container));
+    }
+  });
+</script>
