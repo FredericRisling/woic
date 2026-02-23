@@ -4,14 +4,14 @@ meta:
 
 hero:
   title: "Über uns"
-  subtitle: "Word of Faith Outreach International Center (W.O.I.C. e.V.)"
+  subtitle: "Word of Faith Outreach International Center (WOIC e.V.)"
 
 sections:
   - type: "html"
     title: "Unsere Mission"
     html: |
       <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
-        Das Word of Faith Outreach International Center (W.O.I.C. e.V.) hat sich verpflichtet:
+        Das Word of Faith Outreach International Center (WOIC e.V.) hat sich verpflichtet:
       </p>
       <div class="grid sm:grid-cols-2 gap-4">
         <div class="flex items-start space-x-3 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-4">
