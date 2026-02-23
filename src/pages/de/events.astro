@@ -26,7 +26,7 @@ const pageData = await getEntry('pages', `${lang}/events`);
   {pageData.data.sections.map(section => {
     if (section.type === 'events') {
       return (
-        <Section title={section.title}>
+        <Section title={section.title} background={section.background}>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {section.events.map(event => (
               <Card>
@@ -48,6 +48,13 @@ const pageData = await getEntry('pages', `${lang}/events`);
                 <p class="text-neutral-600 dark:text-neutral-400">
                   {event.description}
                 </p>
+                {event.location && (
+                  <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-3">
+                    📍 {event.locationUrl
+                      ? <a href={event.locationUrl} target="_blank" rel="noopener noreferrer" class="underline hover:text-primary-600">{event.location}</a>
+                      : event.location}
+                  </p>
+                )}
               </Card>
             ))}
           </div>

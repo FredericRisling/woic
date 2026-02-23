@@ -121,6 +121,8 @@ const pagesCollection = defineCollection({
         title: z.string(),
         time: z.string(),
         description: z.string(),
+        location: z.string().optional(),
+        locationUrl: z.string().url().optional(),
       })).optional(),
 
       // For media sections
