@@ -7,8 +7,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://fredericrisling.github.io',
-  base: '/woic',
+  site: process.env.SITE_URL ?? 'https://fredericrisling.github.io',
+  base: process.env.BASE_PATH ?? '/woic',
   integrations: [
     react(),
     sitemap({
